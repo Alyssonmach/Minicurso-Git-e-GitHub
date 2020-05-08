@@ -20,7 +20,14 @@
 |8. Issues e Forks|
 |9. Markdown|
 |10. Comandos Git|
-|11. Finalização|
+|11. Finalização|  
+
+#### Instale todos os softwares necessários para o Minicurso de Git e Github
+- [Clique aqui para ver o passo a passo](https://algebralinearufcg.github.io/InstalacoesGitHub.html).
+
+#### Acesse todos os arquivos do minicurso em texto
+- [Clique aqui para visitar o site do Minicurso de Git e Github](https://algebralinearufcg.github.io/listadegithub.html).
+- [Clique aqui para visitar a "branch Arquivos-Curso"](https://github.com/Alyssonmach/Minicurso-Git-e-GitHub/tree/Arquivos-Curso).
 
 ### Alguma Dúvida? Entre em Contato Comigo:
 - [Me Envie um E-mail](mailto:alyssonmachado388@gmail.com);
