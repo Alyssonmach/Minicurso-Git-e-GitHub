@@ -2,23 +2,24 @@
 
 Abaixo você terá acesso aos tópicos explicativos do curso de Git e Github para eventual consulta.
 
-|**Recursos Textuais**|
-|---------------------|
-|[Aprendendo Sobre o Git](https://algebralinearufcg.github.io/AprendendoSobreoGit.html)|
-|[Aprendendo Sobre o GitHub](https://algebralinearufcg.github.io/AprendendoGitHub.html)|
-|[Preparando o Ambiente de Trabalho](https://algebralinearufcg.github.io/InstalacoesGitHub.html)|
-|[Repositórios](https://algebralinearufcg.github.io/RepositorioGitHub.html)|
-|[GitHub Pages](https://algebralinearufcg.github.io/UsandoGitHubPages.html)|
-|[Issues e Forks](https://algebralinearufcg.github.io/IssueFork.html)|
-|[Branches](https://algebralinearufcg.github.io/UsandoBranches.html)|
-|[Markdown](https://algebralinearufcg.github.io/CriandoEmMarkdown.html)|
-|[Comandos Git](http://comandosgit.github.io/)|
+|**Tutoriais**|
+|------------------------|
+|[1. Aprendendo Sobre o Git](https://alyssonmach.github.io/Minicurso-Git-e-GitHub/AprendendoSobreoGit.html)|
+|[2. Aprendendo Sobre o Github](https://alyssonmach.github.io/Minicurso-Git-e-GitHub/AprendendoGitHub.html)|
+|[3. Preparando o Ambiente de Trabalho](https://alyssonmach.github.io/Minicurso-Git-e-GitHub/InstalacoesGitHub.html)|
+|[4. Criando uma Conta e um Repositório](https://alyssonmach.github.io/Minicurso-Git-e-GitHub/RepositorioGitHub.html)|
+|[5. Branches](https://alyssonmach.github.io/Minicurso-Git-e-GitHub/UsandoBranches.html)|
+|[6. Github Pages](https://alyssonmach.github.io/Minicurso-Git-e-GitHub/UsandoGitHubPages.html)|
+|[7. Issues e Forks](https://alyssonmach.github.io/Minicurso-Git-e-GitHub/IssueFork.html)|
+|[8. Markdown](https://alyssonmach.github.io/Minicurso-Git-e-GitHub/CriandoEmMarkdown.html)|
+|[9. Comandos Git](http://comandosgit.github.io/)|
+|[10. Finalização](https://alyssonmach.github.io/Minicurso-Git-e-GitHub/listadeformulario.html)|  
 
 ### Site Álgebra Linear com Python
 - [Link do Site Álgebra Linear com Python](https://algebralinearufcg.github.io);
 
 ### Site Curso de Git e GitHub
-- [Link do Site Curso de Git e Github](https://algebralinearufcg.github.io/listadegithub.html);
+- [Link do Site Curso de Git e Github](https://alyssonmach.github.io/Minicurso-Git-e-GitHub/index.html);
 
 ### Alguma dúvida? Entre em Contato Comigo:
-- [Me Envie um E-mail](mailto:alyssonmachado388@gmail.com);
+- [Me Envie um E-mail](mailto:alysson.barbosa@ee.ufcg.edu.br);
