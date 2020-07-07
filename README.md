@@ -29,4 +29,4 @@
 - [Clique aqui para visitar a "branch Arquivos-Curso"](https://github.com/Alyssonmach/Minicurso-Git-e-GitHub/tree/Arquivos-Curso).
 
 ### Alguma Dúvida? Entre em Contato Comigo:
-- [Me Envie um E-mail](mailto:alyssonmachado388@gmail.com);
+- [Me Envie um E-mail](mailto:alysson.barbosa@ee.ufcg.edu.br);
