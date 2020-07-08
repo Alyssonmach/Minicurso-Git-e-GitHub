@@ -1,6 +1,7 @@
 # Minicurso Git e GitHub
-
  #### Aprenda a usar o Software de Versionamento Git e o repositório remoto Github para auxiliar sua vida acadêmica e profissional.
+
+- [apresentacao-git-github](https://github.com/Alyssonmach/Minicurso-Git-e-GitHub/blob/gh-pages/Imagens/minicurso-git-github.png)
 
 - **O que é Git**?
 > "Git é um sistema de controle de versões distribuído, usado principalmente no desenvolvimento de software, mas pode ser usado para registrar o histórico de edições de qualquer tipo de arquivo. O Git foi inicialmente projetado e desenvolvido por Linus Torvalds para o desenvolvimento do kernel Linux, mas foi adotado por muitos outros projetos."  
