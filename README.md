@@ -1,6 +1,7 @@
 # Tópicos do Minicurso de Git e Github
+#### Abaixo você terá acesso aos tópicos explicativos do curso de Git e Github para eventual consulta.
 
-Abaixo você terá acesso aos tópicos explicativos do curso de Git e Github para eventual consulta.
+![apresentacao-git-github](https://github.com/Alyssonmach/Minicurso-Git-e-GitHub/blob/gh-pages/Imagens/minicurso-git-github.png)
 
 |**Tutoriais**|
 |------------------------|
