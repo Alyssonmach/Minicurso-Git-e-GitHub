@@ -1,14 +1,20 @@
 # Esse é o meu primeiro site feito com HTML puro!
 
-- Essa visualização é extremamente feia e nada agradável! Abaixo segue alguns links onde eu posso aprender a criar o meu site de forma profissional!  
+Você pode usar a linguagem Markdown para criar o seu site! 
 
-|**Links para Aprender a Desenvolver na WEB**|
-|--------------------------------------------|
-|[Fundação Bradesco - Escola Virtual](https://www.ev.org.br/)|
-|[Playlists do CFB Cursos](https://www.youtube.com/user/canalfessorbruno/playlists)|
-|[Playlists do Professor Guanabara](https://www.youtube.com/user/cursosemvideo/playlists)|
-|[Repositório com exempos de HTML e CSS](https://github.com/Alyssonmach/Aprendendo-HTML-com-CSS)|
+![apresentacao-git-github](https://github.com/Alyssonmach/Minicurso-Git-e-GitHub/blob/gh-pages/Imagens/minicurso-git-github.png)
 
-### Alguma dúvida? Entre em contato comigo:   
-- [Me envie um e-mail](mailto:alyssonmachado388@gmail.com);
+|**Tutoriais**|
+|------------------------|
+|[1. Aprendendo Sobre o Git](https://alyssonmach.github.io/Minicurso-Git-e-GitHub/AprendendoSobreoGit.html)|
+|[2. Aprendendo Sobre o Github](https://alyssonmach.github.io/Minicurso-Git-e-GitHub/AprendendoGitHub.html)|
+|[3. Preparando o Ambiente de Trabalho](https://alyssonmach.github.io/Minicurso-Git-e-GitHub/InstalacoesGitHub.html)|
+|[4. Criando uma Conta e um Repositório](https://alyssonmach.github.io/Minicurso-Git-e-GitHub/RepositorioGitHub.html)|
+|[5. Branches](https://alyssonmach.github.io/Minicurso-Git-e-GitHub/UsandoBranches.html)|
+|[6. Github Pages](https://alyssonmach.github.io/Minicurso-Git-e-GitHub/UsandoGitHubPages.html)|
+|[7. Issues e Forks](https://alyssonmach.github.io/Minicurso-Git-e-GitHub/IssueFork.html)|
+|[8. Markdown](https://alyssonmach.github.io/Minicurso-Git-e-GitHub/CriandoEmMarkdown.html)|
+|[9. Comandos Git](http://comandosgit.github.io/)|
+|[10. Finalização](https://alyssonmach.github.io/Minicurso-Git-e-GitHub/listadeformulario.html)|  
+
 
