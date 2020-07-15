@@ -1,4 +1,4 @@
-# Esse é o meu primeiro site feito com HTML puro!
+# Esse é o meu primeiro site feito com Markdown!
 
 Você pode usar a linguagem Markdown para criar o seu site! 
 
