@@ -5,7 +5,7 @@ body
 	margin: 0;
 	padding: 0;
 	font-family: 'Poppins', sans-serif;
-	background: white;
+	background: var(--color-secondary); 
 	background-attachment: fixed;
 }
 
@@ -15,15 +15,15 @@ body
 	max-width: 1200px;
 	margin: 20px auto;
 	padding: 10px;
-	background: #fff;
+	background: var(--color-secondary); 
 	box-sizing: border-box;
-	border-radius: 4px;
+	border-radius: 32px;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .logo
 {
-	color: #EA4335;
+	color: var(--color-primary); 
 	height: 60px;
 	font-size: 36px;
 	line-height: 60px;
@@ -33,6 +33,11 @@ body
 	float: left;
 	font-weight: 700;
 	text-decoration: none;
+}
+
+.logo img
+{
+	width: 110px;
 }
 
 .navatalho
@@ -60,20 +65,21 @@ body
 .navatalho ul li a
 {
 	display: block;
-	margin: 10px 0;
+	margin: 10px 1.5px;
 	padding: 10px 20px;
 	text-decoration: none;
-	color: #4285F4;
+	color: var(--color-accent); 
 }
 
 .navatalho ul li a.active, .navatalho ul li a:hover
 {
-	background: #EA4335;
+	border-radius: 34px;
+	background: var(--color-primary); 
 	color: #fff;
 	transition: 0.2s;
 }
 
-@media (max-width: 768px)
+@media (max-width: 1200px)
 {
 	.menu-toggle
 	{
@@ -118,8 +124,7 @@ body
 
 	.navatalho.active ul li a
 	{
-		margin: 0;
+		margin: 5px;
 	}
-
 	
 }
