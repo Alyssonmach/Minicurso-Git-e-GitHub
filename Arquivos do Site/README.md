@@ -1,20 +1,21 @@
-# Esse é o meu primeiro site feito com Markdown!
+# Meu primeiro site feito com Markdown
 
-Você pode usar a linguagem Markdown para criar o seu site! 
+O Markdown permite formatar textos com facilidade e criar páginas simples para compartilhar informações.
 
-![apresentacao-git-github](https://github.com/Alyssonmach/Minicurso-Git-e-GitHub/blob/gh-pages/Imagens/minicurso-git-github.png)
+![Apresentação do minicurso de Git e GitHub](https://alyssonmach.github.io/Minicurso-Git-e-GitHub/img/minicurso-git-github.png)
 
-|**Tutoriais**|
-|------------------------|
-|[1. Aprendendo Sobre o Git](https://alyssonmach.github.io/Minicurso-Git-e-GitHub/AprendendoSobreoGit.html)|
-|[2. Aprendendo Sobre o Github](https://alyssonmach.github.io/Minicurso-Git-e-GitHub/AprendendoGitHub.html)|
-|[3. Preparando o Ambiente de Trabalho](https://alyssonmach.github.io/Minicurso-Git-e-GitHub/InstalacoesGitHub.html)|
-|[4. Criando uma Conta e um Repositório](https://alyssonmach.github.io/Minicurso-Git-e-GitHub/RepositorioGitHub.html)|
-|[5. Branches](https://alyssonmach.github.io/Minicurso-Git-e-GitHub/UsandoBranches.html)|
-|[6. Github Pages](https://alyssonmach.github.io/Minicurso-Git-e-GitHub/UsandoGitHubPages.html)|
-|[7. Issues e Forks](https://alyssonmach.github.io/Minicurso-Git-e-GitHub/IssueFork.html)|
-|[8. Markdown](https://alyssonmach.github.io/Minicurso-Git-e-GitHub/CriandoEmMarkdown.html)|
-|[9. Comandos Git](http://comandosgit.github.io/)|
-|[10. Finalização](https://alyssonmach.github.io/Minicurso-Git-e-GitHub/listadeformulario.html)|  
+## Tutoriais do minicurso
 
+1. [Aprendendo sobre o Git](https://alyssonmach.github.io/Minicurso-Git-e-GitHub/jup-not/AprendendoSobreoGit.html)
+2. [Aprendendo sobre o GitHub](https://alyssonmach.github.io/Minicurso-Git-e-GitHub/jup-not/AprendendoGitHub.html)
+3. [Preparando o ambiente de trabalho](https://alyssonmach.github.io/Minicurso-Git-e-GitHub/jup-not/InstalacoesGitHub.html)
+4. [Criando um repositório](https://alyssonmach.github.io/Minicurso-Git-e-GitHub/jup-not/RepositorioGitHub.html)
+5. [Publicando com GitHub Pages](https://alyssonmach.github.io/Minicurso-Git-e-GitHub/jup-not/UsandoGitHubPages.html)
+6. [Issues e forks](https://alyssonmach.github.io/Minicurso-Git-e-GitHub/jup-not/IssueFork.html)
+7. [Trabalhando com branches](https://alyssonmach.github.io/Minicurso-Git-e-GitHub/jup-not/UsandoBranches.html)
+8. [Escrevendo em Markdown](https://alyssonmach.github.io/Minicurso-Git-e-GitHub/jup-not/CriandoEmMarkdown.html)
 
+## Materiais complementares
+
+- [Leituras e vídeos](https://alyssonmach.github.io/Minicurso-Git-e-GitHub/recursos-complementares.html): livro Pro Git e vídeos sobre Git.
+- [Referência de comandos Git](http://comandosgit.github.io/).
