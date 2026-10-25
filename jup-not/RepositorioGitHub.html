@@ -1,22 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR" class="theme-dark">
 <head><meta charset="utf-8" />
 
-<title>Repositórios</title>
+<title>Repositórios · Minicurso de Git e GitHub</title>
 
 <link rel = "icon" href = "../img/logo2.png" type = "image/x-icon" />
 <link rel = "shortcut icon" href = "../img/logo2.png" type = "image/x-icon" />
 <meta name = "viewport" content = "width=device-width, initial-scale=1.0" />
 <meta name = "author" content = "Alysson Machado">
-<meta name = "description" content = "Aprenda a usar o Software de Versionamento Git e o Repositório GitHub para auxiliar sua vida acadêmica e profissional.">
-<link rel = "stylesheet" type = "text/css" href = "../css/estilomenu.css" />
-<link href = "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel = "stylesheet" />
-
+<meta name = "description" content = "Criando um repositório · Minicurso de Git e GitHub.">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <link rel="stylesheet" href="../css/jupyter-style.css">
-<link rel="stylesheet" href="../css/switcher-style.css">
+<link rel="stylesheet" href="../css/site-theme.css">
+<link rel="stylesheet" href="../css/lesson-style.css">
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
@@ -40,65 +38,38 @@
     });
     </script>
     <!-- End of mathjax configuration --></head>
-<body>
+<body class="lesson-page">
 
-  <header class = "headeratalho"> 
-
-    <a href = "../index.html" class = "logo" target = "_self"> Curso de Git e GitHub </a>
-    <div class = "menu-toggle"></div>
-
-    <nav class = "navatalho">
-      
+    <header class="headeratalho">
+    <a href="../index.html" class="logo">Curso de Git e GitHub</a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-navigation"></button>
+    <nav class="navatalho" id="primary-navigation" aria-label="Navegação principal">
       <ul>
-        
-        <li><a href = "http://ecandeia.dee.ufcg.edu.br" target = "_blank"> Site da Disciplina </a></li>
-        <li><a href = "../index.html" target = "_self" class = "active"> Materiais </a></li>
-        <li><a href = "../listadeformulario.html" target = "_self"> Feedback </a></li>
+        <li><a href="../index.html">Materiais</a></li>
+        <li><a href="../recursos-complementares.html">Leituras e vídeos</a></li>
+        <li><a href="http://ecandeia.dee.ufcg.edu.br" target="_blank" rel="noopener noreferrer">Site da Disciplina</a></li>
         <li>
-					
-					<div class="container-switcher">
-
-					<label id="switch" class="switch">
-							<input type="checkbox" onchange="toggleTheme()" id="slider">
-							<span class="slider round"></span>
-					</label>
-					
-					</div>
-					
-			    </li>
-
+          <div class="container-switcher">
+            <label id="switch" class="switch" aria-label="Alternar tema claro ou escuro">
+              <input type="checkbox" onchange="toggleTheme()" id="slider">
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </li>
       </ul>
-
     </nav>
-
-    <div class = "clearfix"></div>
-
+    <div class="clearfix"></div>
   </header>
 
   <script type = "text/javascript" src = "../js/switcher.js"></script>
 
-  <script src="https://code.jquery.com/jquery-3.4.1.js" 
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" 
-  crossorigin="anonymous"></script>
-
-  <script type="text/javascript">
-
-    $(document).ready(function(){
-      $('.menu-toggle').click(function(){
-        $('.menu-toggle').toggleClass('active')
-        $('nav').toggleClass('active')
-      })
-    })
-
-  </script>
-  
-  <div tabindex="-1" id="notebook" class="border-box-sizing">
-    <div class="container" id="notebook-container">
+<div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container lesson-content" id="notebook-container">
 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Reposit&#243;rios">Reposit&#243;rios<a class="anchor-link" href="#Reposit&#243;rios">&#182;</a></h1><h4 id="Vamos-criar-e-come&#231;ar-a-trabalhar-com-nosso-primeiro-reposit&#243;rio-no-GitHub.-Com-ele,-podemos-hospedar-nossos-c&#243;digos-fonte-e-manter-projetos-Open-Source-feitos-em-grupo.">Vamos criar e come&#231;ar a trabalhar com nosso primeiro reposit&#243;rio no GitHub. Com ele, podemos hospedar nossos c&#243;digos fonte e manter projetos Open Source feitos em grupo.<a class="anchor-link" href="#Vamos-criar-e-come&#231;ar-a-trabalhar-com-nosso-primeiro-reposit&#243;rio-no-GitHub.-Com-ele,-podemos-hospedar-nossos-c&#243;digos-fonte-e-manter-projetos-Open-Source-feitos-em-grupo.">&#182;</a></h4>
+<h1 id="Reposit&#243;rios">Reposit&#243;rios<a class="anchor-link" href="#Reposit&#243;rios">&#182;</a></h1><h4 id="resumo-da-aula">Vamos criar um repositório local, publicá-lo no GitHub e acompanhar as mudanças feitas no projeto.<a class="anchor-link" href="#resumo-da-aula">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -113,7 +84,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Nessa parte do curso, vamos usar as ferramentas que foram instaladas em sua máquina na aula anterior para criar o seu primeiro repositório público. Com ele, é possível criar e organizar os seus projetos hospedando os seus códigos fonte, sendo ainda mais vantajoso se o trabalho estiver sendo realizado em grupo. Como exemplo, veja esse repositório que eu fiz, onde nele há todo o conteúdo que levou a criação desse site:</p>
+<p>Nesta aula, usaremos as ferramentas instaladas anteriormente para criar um repositório e publicar uma cópia remota no GitHub. Um repositório organiza os arquivos e o histórico de um projeto; ele também pode ser compartilhado com outras pessoas.</p>
 
 </div>
 </div>
@@ -131,7 +102,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Vale lembrar que para prosseguir bem em tudo que eu mostrarei aqui, é necessário ter fixado bem os conteúdos explicados previamentes sobre Git e GitHub. Se você ainda não seguiu os passos anteriores, volte e veja para que você consiga se desenvolver bem no Git e GitHub. Caso já tenha visto, seja bem vindo a uma das partes mais importantes desse curso.</p>
+<p>Antes de continuar, revise os conceitos de Git e GitHub e confira se o GitHub Desktop está instalado. A aula anterior explica como preparar o ambiente.</p>
 
 </div>
 </div>
@@ -163,14 +134,14 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Come&#231;ando-com-o-Repos&#237;torio-Local">Come&#231;ando com o Repos&#237;torio Local<a class="anchor-link" href="#Come&#231;ando-com-o-Repos&#237;torio-Local">&#182;</a></h3>
+<h3 id="Come&#231;ando-com-o-Reposit&#243;rio-Local">Come&#231;ando com o Reposit&#243;rio Local<a class="anchor-link" href="#Come&#231;ando-com-o-Reposit&#243;rio-Local">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Vamos trabalhar com uma sequência de passos para mostrar a você como iniciar de forma profissional com o seu repositório pessoal. Vale a pena lembrar que há duas outras formas que você pode criar o seu repositório: podendo ser diretamente pelo repositório remoto GitHub (a forma mais simples de todas) ou você pode também usar comando no Git Bash (método esse um pouco mais complexo a primeira vista). A forma que será mostrada aqui usará os recursos que foram instalados na aula anterior, e ela é mais dinâmica, pois trata da harmonia criada entre o Git, GitHub Desktop e o Visual Studio Code.</p>
+<p>Vamos criar primeiro um repositório local pelo GitHub Desktop e depois publicá-lo no GitHub. Também é possível criar um repositório pela interface web ou usar comandos no terminal; aqui usaremos o GitHub Desktop e o Visual Studio Code.</p>
 
 </div>
 </div>
@@ -179,7 +150,7 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ol>
-<li>No GitHub Desktop, após você estar logado com seu perfil do GitHub, é possível criar o seu repositório local (inicialmente, ele ficará armazenado na sua máquina, e não no repositório remoto GitHub). Quando você clicar no botão "<strong>Create a new repository</strong>", você deve escolher um nome para o seu repositório, escolher em que diretório será salvo o seu arquivo, adicionar uma descrição, informar se o seu repositório será público ou privado e escolher uma licença.</li>
+<li>No GitHub Desktop, escolha a opção para criar um repositório. Informe um nome, selecione a pasta onde os arquivos ficarão e, se desejar, adicione uma descrição, escolha a visibilidade e inclua um arquivo README ou uma licença.</li>
 </ol>
 
 </div>
@@ -213,7 +184,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>Preencha as informações para a criação do seu repositório local. Após todos os passos terem sido concluidos, clique em "<strong>Create Repository</strong>".</p>
+<blockquote><p>Preencha as informações para a criação do seu repositório local. Após todos os passos terem sido concluídos, clique em "<strong>Create Repository</strong>".</p>
 </blockquote>
 
 </div>
@@ -223,7 +194,7 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ol>
-<li>O repositório ficará salvo em sua máquina, por esse motivo, tenha cuidado para não apagar ou adicionar nenhum arquivo intruso, pois isso poderá afetar o seu repositório remoto quando você fizer um "push".</li>
+<li>O repositório local fica salvo na pasta escolhida. Você pode adicionar, editar ou remover arquivos; o GitHub Desktop mostrará essas mudanças para que você decida quais serão incluídas em um commit.</li>
 </ol>
 
 </div>
@@ -240,7 +211,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>Observe que todos os documentos da licença e do README já aparecem automaticamente no seu GitHub. Em aulas futuras, você aprenderá a atualizar o seu documento README com a linguagem de marcação Markdown.</p>
+<blockquote><p>Se você selecionou essas opções, o GitHub Desktop cria os arquivos README e de licença no repositório local. Eles aparecerão no GitHub depois que você publicar o repositório. Na aula de Markdown, você aprenderá a editar o README.</p>
 </blockquote>
 
 </div>
@@ -250,7 +221,7 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ol>
-<li>Com o seu repositório local criado, vamos agora publicar o mesmo no GitHub clicando em "<strong>Publish Repository</strong>". Dessa forma, você possuirá tanto um repositório local, quanto um repositório remoto.</li>
+<li>Para disponibilizar o repositório no GitHub, use a opção de publicação do GitHub Desktop. Escolha se o repositório remoto será público ou privado e confirme a publicação.</li>
 </ol>
 
 </div>
@@ -284,7 +255,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>Acessando o site <strong>github.com</strong> e pesquisando por seu repositório, você pode perceber que ele já está criado remotamente.</p>
+<blockquote><p>Acesse o GitHub e abra a página do repositório para conferir se a publicação foi concluída.</p>
 </blockquote>
 
 </div>
@@ -294,7 +265,7 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ol>
-<li>Para editar arquivos existentes, adicionar novos ou remover alguns, você pode usar o Visual Studio Code. Pelo GitHub Desktop, você pode clicar em "<strong>Open Visual Studio Code</strong>" para ter acesso a todos os arquivos presentes no seu repositório local. Como o Visual Studio Code possui suporte para diversas linguagens de programação, ele é uma ótima ferramenta de trabalho.</li>
+<li>Use um editor de código para adicionar ou alterar arquivos na pasta do repositório local. O GitHub Desktop pode abrir essa pasta no Visual Studio Code, se ele estiver instalado.</li>
 </ol>
 
 </div>
@@ -311,7 +282,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>Com o Visual Studio Code você pode ser mais produtivo enquanto estiver trabalhando em seu repositório.</p>
+<blockquote><p>Um editor de código permite alterar os arquivos do projeto. O GitHub Desktop mostra as mudanças detectadas pelo Git para que você possa revisá-las.</p>
 </blockquote>
 
 </div>
@@ -328,7 +299,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>Veja pela imagem acima que foram feitas duas alterações no repositório, uma adição do arquivo tabela.html e uma alteração no documento README.md. Cada passo feito será adicionado ao seu repositório local pelo Git.</p>
+<blockquote><p>Veja pela imagem acima que foram feitas duas alterações no repositório, uma adição do arquivo tabela.html e uma alteração no documento README.md. Cada passo feito será adicionado ao repositório local pelo Git.</p>
 </blockquote>
 
 </div>
@@ -338,7 +309,7 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ol>
-<li>Após ter feito suas edições usando o Visual Studio Code, você pode voltar para o GitHub Desktop para observar que todo o seu trabalho feito foi registrado. O que acaba de ser feito com esse passo foi a criação de uma nova versão (ou um versionamento), em que além de registrar o que foi feito de novidade em seus códigos, há também o registro da versão passada. Com tudo isso em mente, você pode comitar o seu código para o seu repositório local. Adicione uma descrição sobre o que foi feito e clique em "<strong>Commit to Master</strong>" (lembrando que master é o branch padrão).</li>
+<li>Depois de editar os arquivos, volte ao GitHub Desktop e revise as mudanças. Para registrá-las, escreva uma mensagem que resuma o trabalho e crie um commit. O commit guarda um estado do projeto no histórico local.</li>
 </ol>
 
 </div>
@@ -355,7 +326,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>Volte para o GitHub Desktop e veja todas as suas alterações feitas nessa nova versão do seu repositório. Clique em "<strong>Commit to master</strong>" para enviar ao repositório local.</p>
+<blockquote><p>No GitHub Desktop, confira as mudanças e crie um commit com uma mensagem descritiva. O nome da branch padrão e os rótulos dos botões podem variar; a captura de tela desta aula mostra uma versão anterior da interface.</p>
 </blockquote>
 
 </div>
@@ -372,7 +343,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>Como foi comitado no repositório local, nada ainda será registrado no seu repositório remoto. Dessa forma, você pode fazer milhares de commits em seu repositório local, salvando tudo automaticamente usando o Git, e só quando você sentir segurança em suas alterações feitas, postar oficialmente no seu repositório remoto.</p>
+<blockquote><p>O commit fica no repositório local até você enviar as mudanças ao remoto. Assim, você pode revisar o histórico e preparar novos commits antes de publicá-los.</p>
 </blockquote>
 
 </div>
@@ -389,7 +360,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>Para adicionar todas as alterações no repositório remoto GitHub, quando você se sentir totalmente seguro no que foi feito, clique em "<strong>Push origin</strong>" para fazer essa implementação.</p>
+<blockquote><p>Quando estiver pronto para compartilhar os commits locais, use a opção de push no GitHub Desktop. O push envia ao repositório remoto os commits que ainda não foram publicados.</p>
 </blockquote>
 
 </div>
@@ -399,7 +370,7 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ol>
-<li>Se você visitar o seu perfil no GitHub e olhar o repositório criado, você pode verificar que o "<strong>push</strong>" deu certo. Além diso, você também tem a possibilidade de fazer edições, remover ou adicionar arquivos pelo própio GitHub.</li>
+<li>Se você visitar o seu perfil no GitHub e olhar o repositório criado, você pode verificar que o "<strong>push</strong>" deu certo. Além diso, você também tem a possibilidade de fazer edições, remover ou adicionar arquivos pelo próprio GitHub.</li>
 </ol>
 
 </div>
@@ -416,7 +387,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>Veja que todas as alterações feitas já estão disponíveis no GitHub. Caso você deseje fazer edições, remoções ou adições de conteúdo pelo própio GitHub, isso também é possível de ser realizado.</p>
+<blockquote><p>Veja que todas as alterações feitas já estão disponíveis no GitHub. Caso você deseje fazer edições, remoções ou adições de conteúdo pelo próprio GitHub, isso também é possível de ser realizado.</p>
 </blockquote>
 
 </div>
@@ -426,7 +397,7 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ol>
-<li>Pensando em manter o seu repositório local e o repositório remoto em perfeita harmonia, você pode também fazer o inverso, que é trazer as alterações feitas no repositório remoto para o seu repositório local. Usando o GitHub Desktop, você pode clicar na opção "<strong>Fetch origin</strong>" para fazer com que o Git faça a varredura no repositório remoto e encontre implementações que não estão presentes em seu repositório local. Caso seja encontrando alguma coisa, clique em "<strong>pull</strong>" para atualizar o seu repositório local na versão mais recente.</li>
+<li>Para atualizar o repositório local com mudanças remotas, use Fetch origin para buscar as referências e os objetos novos. Depois, use Pull origin para integrar as mudanças à branch atual, se necessário.</li>
 </ol>
 
 </div>
@@ -435,7 +406,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src = "../img/44.png" width = "900" alt = "qualquer alteração feita no repositório remoto pode ser adicionada no repositório local através do comando pull"></p>
+<p><img src = "../img/44.png" width = "900" alt = "Atualizando o repositório local com mudanças remotas"></p>
 
 </div>
 </div>
@@ -443,7 +414,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>Com os comando "<strong>Fetch origin</strong>" e "<strong>pull</strong>", você pode atualizar o seu repositório local para a versão mais recente. Além disso, é possível fazer alterações diretamente em seu repositório remoto GitHub.</p>
+<blockquote><p>Use <strong>Fetch origin</strong> para buscar atualizações do repositório remoto. Use <strong>Pull origin</strong> quando quiser integrá-las à branch local atual. Também é possível fazer alterações diretamente no GitHub, se você tiver permissão.</p>
 </blockquote>
 
 </div>
@@ -460,7 +431,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>Perceba que o comando pull realmente é eficaz, as alterações feitas no repositório remoto estão disponíveis no repositório local. Além disso, o processo em sí é extremamente mais rápido pelo Git do que em outros softwares de versionamento, pelo simples motivo que ele so faz a adição ou remoção do exato ponto em que foi alterado no arquivo de código fonte em sí. Desse modo, o tempo gasto para sobrepor todo arquivo pelo novo é superado e, em casos de erros, é possível voltar para versões anteriores do código. Vamos ver isso com mais clareza mais adiante no curso.</p>
+<blockquote><p>O Git transfere os dados necessários para buscar e integrar mudanças, em vez de substituir indiscriminadamente todo o projeto. Como o histórico é mantido, você também pode comparar versões e, quando apropriado, recuperar estados anteriores.</p>
 </blockquote>
 
 </div>
@@ -470,7 +441,7 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ol>
-<li>Por fim, adicione mais colaboradores ao seu repositório remoto (veja aulas anteriores para saber como faz isso!). Com isso, você pode estimular o trabalho em grupo na comunidade Open Source e ficar cada vez mais profissional no GitHub, essa que é uma excelente ferramenta para ser usada no mercado de trabalho.</li>
+<li>Se outras pessoas forem trabalhar no projeto, convide-as pelas configurações de acesso do repositório. A disponibilidade dessa opção depende das permissões da sua conta e do repositório.</li>
 </ol>
 
 </div>
@@ -486,7 +457,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>O GitHub é uma ferramenta poderosa em que também podemos contribuir com o projeto de terceiros. Lembre-se que ela é uma plataforma que tem a principal vantagem de conter inúmeros projetos Open Source e, desse modo, garantir que outras pessoas possam colaborar com seu projeto, sejam elas colaboradoras oficiais ou não. Para essas pessoas que se enquadram nesses casos, há algumas ferramentas que permitem a elas <strong>clonar</strong> o seu repositório nas máquinas delas ou criar uma outra ramificação do seu projeto, visando dar continuidade ou até fazer correções para você. Vamos ver como isso funciona na prática.</p>
+<p>Você também pode colaborar em projetos de outras pessoas. Um fork cria uma cópia do repositório na sua conta; a partir dela, você pode propor mudanças ao projeto original por meio de um pull request.</p>
 
 </div>
 </div>
@@ -495,7 +466,7 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ol>
-<li>Para clonar um repositório remoto e torná-lo local em sua máquina, você pode abrir o GitHub Desktop, ir na opção "<strong>file</strong>" e clicar em "<strong>clone repository</strong>".</li>
+<li>Para criar uma cópia local de um repositório remoto, use a opção de clonar no GitHub Desktop e escolha o repositório e a pasta de destino.</li>
 </ol>
 
 </div>
@@ -538,7 +509,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Lembre-se que qualquer alteração que você faça na pasta do repositório local que está em sua máquina, o GitHub detecta a alteração e você pode comitar a mesma ao repositório remoto. Esse recurso é de grande ajuda se você possui arquivos em sua máquina e deseja colocar no GitHub.</p>
+<p>As mudanças feitas na pasta local são detectadas pelo Git. Você pode revisá-las, registrá-las em commits e enviá-las ao repositório remoto, se tiver permissão.</p>
 
 </div>
 </div>
@@ -546,7 +517,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Além disso, tenham consciência e respeito com os trabalhos alheios. Nunca pegue projetos feitos por outras pessoas e atribua a sua autoria, pois além de ser uma prática <strong>antiética</strong>, é uma prática <strong>criminosa</strong> punível por lei.</p>
+<p>Respeite a autoria e a licença dos projetos de outras pessoas. Ao reutilizar código, verifique os termos da licença e dê os créditos exigidos.</p>
 
 </div>
 </div>
@@ -561,7 +532,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Na próxima aula, vamos criar uma página na Web, hospedando-a no <a href = "https://pages.github.com/" target = "_blank">GitHub Pages</a>. Com isso, você pode fazer uma melhor divulgação do seu trabalho usando HTML, CSS e js.</p>
+<p>Na próxima aula, vamos publicar um site estático com o <a href = "https://pages.github.com/" target = "_blank" rel = "noopener noreferrer">GitHub Pages</a> e conhecer os arquivos básicos usados para páginas web.</p>
 
 </div>
 </div>
@@ -593,7 +564,7 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><a href = "https://www.youtube.com/watch?v=5BYm7UdCrX0&t=1727s" target = "_blank">Explicação do Professor Gustavo Guanabara Sobre a Criação de Repositórios</a>;</li>
+<li><a href = "https://www.youtube.com/watch?v=5BYm7UdCrX0&t=1727s" target = "_blank">Explicação do Professor Gustavo Guanabara Sobre a Criação de Repositórios</a>.</li>
 </ul>
 
 </div>
@@ -603,7 +574,7 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><a href = "https://www.youtube.com/watch?v=OlArEishhQg" target = "_blank">Explicação do Professor Gustavo Guanabara Sobre o Recurso Clone</a>;</li>
+<li><a href = "https://www.youtube.com/watch?v=OlArEishhQg" target = "_blank">Explicação do Professor Gustavo Guanabara Sobre o Recurso Clone</a>.</li>
 </ul>
 
 </div>
@@ -613,31 +584,27 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><a href = "https://www.youtube.com/watch?v=065NQCDSMb0&t=1246s" target = "_blank">Explicação do Professor Gustavo Guanabara Sobre Versionar Projetos Antigos</a>;</li>
+<li><a href = "https://www.youtube.com/watch?v=065NQCDSMb0&t=1246s" target = "_blank">Explicação do Professor Gustavo Guanabara Sobre Versionar Projetos Antigos</a>.</li>
 </ul>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Alguma-d&#250;vida?-Entre-em-contato-comigo:">Alguma d&#250;vida? Entre em contato comigo:<a class="anchor-link" href="#Alguma-d&#250;vida?-Entre-em-contato-comigo:">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><a href = "mailto:alysson.barbosa@ee.ufcg.edu.br" target = "_blank">Me envie um e-mail</a>;</li>
-</ul>
 
-</div>
-</div>
-</div>
     </div>
   </div>
+
+
+  <nav class="lesson-navigation" aria-label="Navegação entre aulas">
+    <a class="lesson-nav-link lesson-nav-previous" href="InstalacoesGitHub.html">
+      <span class="lesson-nav-direction">← Anterior</span>
+      <span class="lesson-nav-title">Preparando o ambiente de trabalho</span>
+    </a>
+    <a class="lesson-nav-link lesson-nav-next" href="UsandoGitHubPages.html">
+      <span class="lesson-nav-direction">→ Próximo</span>
+      <span class="lesson-nav-title">Publicando com GitHub Pages</span>
+    </a>
+  </nav>
 
   <footer class = "footeratalho">
 
@@ -645,6 +612,7 @@
 
   </footer>
   
+  <script src="../js/site.js"></script>
 </body>
 
 </html>

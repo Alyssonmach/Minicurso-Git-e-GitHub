@@ -1,22 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR" class="theme-dark">
 <head><meta charset="utf-8" />
 
-<title>Markdown</title>
+<title>Markdown · Minicurso de Git e GitHub</title>
 
 <link rel = "icon" href = "../img/logo2.png" type = "image/x-icon" />
 <link rel = "shortcut icon" href = "../img/logo2.png" type = "image/x-icon" />
 <meta name = "viewport" content = "width=device-width, initial-scale=1.0" />
 <meta name = "author" content = "Alysson Machado">
-<meta name = "description" content = "Aprenda a usar o Software de Versionamento Git e o Repositório GitHub para auxiliar sua vida acadêmica e profissional.">
-<link rel = "stylesheet" type = "text/css" href = "../css/estilomenu.css" />
-<link href = "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel = "stylesheet" />
-
+<meta name = "description" content = "Escrevendo em Markdown · Minicurso de Git e GitHub.">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <link rel="stylesheet" href="../css/jupyter-style.css">
-<link rel="stylesheet" href="../css/switcher-style.css">
+<link rel="stylesheet" href="../css/site-theme.css">
+<link rel="stylesheet" href="../css/lesson-style.css">
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
@@ -40,65 +38,38 @@
     });
     </script>
     <!-- End of mathjax configuration --></head>
-<body>
+<body class="lesson-page">
 
-  <header class = "headeratalho"> 
-
-    <a href = "../index.html" class = "logo" target = "_self"> Curso de Git e GitHub </a>
-    <div class = "menu-toggle"></div>
-
-    <nav class = "navatalho">
-      
+    <header class="headeratalho">
+    <a href="../index.html" class="logo">Curso de Git e GitHub</a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-navigation"></button>
+    <nav class="navatalho" id="primary-navigation" aria-label="Navegação principal">
       <ul>
-        
-        <li><a href = "http://ecandeia.dee.ufcg.edu.br" target = "_blank"> Site da Disciplina </a></li>
-        <li><a href = "../index.html" target = "_self" class = "active"> Materiais </a></li>
-        <li><a href = "../listadeformulario.html" target = "_self"> Feedback </a></li>
+        <li><a href="../index.html">Materiais</a></li>
+        <li><a href="../recursos-complementares.html">Leituras e vídeos</a></li>
+        <li><a href="http://ecandeia.dee.ufcg.edu.br" target="_blank" rel="noopener noreferrer">Site da Disciplina</a></li>
         <li>
-					
-            <div class="container-switcher">
-
-            <label id="switch" class="switch">
-                    <input type="checkbox" onchange="toggleTheme()" id="slider">
-                    <span class="slider round"></span>
+          <div class="container-switcher">
+            <label id="switch" class="switch" aria-label="Alternar tema claro ou escuro">
+              <input type="checkbox" onchange="toggleTheme()" id="slider">
+              <span class="slider round"></span>
             </label>
-            
-            </div>
-            
+          </div>
         </li>
-
       </ul>
-
     </nav>
-
-    <div class = "clearfix"></div>
-
+    <div class="clearfix"></div>
   </header>
 
   <script type = "text/javascript" src = "../js/switcher.js"></script>
 
-  <script src="https://code.jquery.com/jquery-3.4.1.js" 
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" 
-  crossorigin="anonymous"></script>
-
-  <script type="text/javascript">
-
-    $(document).ready(function(){
-      $('.menu-toggle').click(function(){
-        $('.menu-toggle').toggleClass('active')
-        $('nav').toggleClass('active')
-      })
-    })
-
-  </script>
-  
-  <div tabindex="-1" id="notebook" class="border-box-sizing">
-    <div class="container" id="notebook-container">
+<div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container lesson-content" id="notebook-container">
 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Personalizando-Documentos-com-o-Markdown">Personalizando Documentos com o Markdown<a class="anchor-link" href="#Personalizando-Documentos-com-o-Markdown">&#182;</a></h1><h4 id="Aprenda-as-caracter&#237;sticas-do-markdown,-uma-&#243;tima-ferramenta-para-edi&#231;&#227;o-de-documentos-que-&#233;-compat&#237;vel-com-o-GitHub.">Aprenda as caracter&#237;sticas do markdown, uma &#243;tima ferramenta para edi&#231;&#227;o de documentos que &#233; compat&#237;vel com o GitHub.<a class="anchor-link" href="#Aprenda-as-caracter&#237;sticas-do-markdown,-uma-&#243;tima-ferramenta-para-edi&#231;&#227;o-de-documentos-que-&#233;-compat&#237;vel-com-o-GitHub.">&#182;</a></h4>
+<h1 id="Personalizando-Documentos-com-o-Markdown">Personalizando Documentos com o Markdown<a class="anchor-link" href="#Personalizando-Documentos-com-o-Markdown">&#182;</a></h1><h4 id="resumo-da-aula">Aprenda a usar Markdown para formatar documentos compatíveis com o GitHub.<a class="anchor-link" href="#resumo-da-aula">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -113,7 +84,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Markdown</strong> é uma vertente da linguagem de marcação <strong>HTML</strong>. Com ela, você pode formatar documentos facilmente e, dada sua integração com o GitHub, é possível criar um excelente README.md para documentar o seu repositório ou fazer issues mais elegantes. Para isso, vamos aprender os principais tópicos dessa linguagem de marcação.</p>
+<p>Markdown é uma linguagem leve de marcação usada para formatar texto com uma sintaxe simples. Muitos processadores convertem Markdown em HTML, e plataformas como o GitHub oferecem recursos próprios. Vamos conhecer alguns elementos comuns.</p>
 
 </div>
 </div>
@@ -121,14 +92,14 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="M&#233;todos-do-Marckdown">M&#233;todos do Marckdown<a class="anchor-link" href="#M&#233;todos-do-Marckdown">&#182;</a></h3>
+<h3 id="M&#233;todos-do-Markdown">M&#233;todos do Markdown<a class="anchor-link" href="#M&#233;todos-do-Markdown">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p><strong>Observação 1</strong>: Todo o texto em marckdown pode ser escrito usando a linguagem de marcação <strong>HTML</strong>, pois ela está por trás de toda a estrutura do Markdown. Entretanto, não vamos abordar HTML aqui, pois foge do nosso propósito.</p>
+<blockquote><p>Markdown é convertido em HTML por muitos processadores, e alguns permitem incluir trechos de HTML. O suporte varia entre plataformas; neste material, veremos a sintaxe Markdown mais comum.</p>
 </blockquote>
 
 </div>
@@ -340,8 +311,8 @@ Esta é a segunda linha.</p>
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Caso você não deixe dois caracteres de espaço em branco</span>
-<span class="c1"># (tecla enter), a linha se manterá coesa.</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Sem os dois espaços no fim da linha, o texto pode continuar</span>
+<span class="c1"># no mesmo parágrafo, conforme o processador Markdown usado.</span>
 <span class="c1">#</span>
 <span class="c1"># Exemplo:</span>
 <span class="c1">#</span>
@@ -467,7 +438,7 @@ Esta ainda é a primeira linha.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>"Eu <del>quebrei</del> fiz engenharia reversa em meu computador."</p>
+<p>“Eu fiz engenharia reversa no meu computador.”</p>
 
 </div>
 </div>
@@ -507,7 +478,7 @@ Esta ainda é a primeira linha.</p>
 <ol>
 <li>Primeiro Elemento;</li>
 <li>Segundo Elemento;</li>
-<li>Terceiro Elemento;</li>
+<li>Terceiro Elemento.</li>
 </ol>
 
 </div>
@@ -549,7 +520,7 @@ Esta ainda é a primeira linha.</p>
 <ul>
 <li>Primeiro Elemento;</li>
 <li>Segundo Elemento;</li>
-<li>Terceiro Elemento;</li>
+<li>Terceiro Elemento.</li>
 </ul>
 
 </div>
@@ -611,9 +582,9 @@ Esta ainda é a primeira linha.</p>
 <span class="c1"># |1. As que sabem contar em binário|</span>
 <span class="c1"># |10. E as que não sabem contar em binário|</span>
 <span class="c1">#</span>
-<span class="c1"># |Forma Correta|Forma Incorreta|</span>
+<span class="c1"># |Termo|Variação regional|</span>
 <span class="c1"># |:-----|---------:|</span>
-<span class="c1"># |Biscoito|Bolhacha|</span>
+<span class="c1"># |Biscoito|Bolacha|</span>
 <span class="c1">#</span>
 <span class="c1"># Observe que o caractere : usado nas tabelas indica o </span>
 <span class="c1"># alinhamento do texto, veja:</span>
@@ -648,6 +619,8 @@ Esta ainda é a primeira linha.</p>
 </tbody>
 </table>
 
+<p>A piada funciona porque 10 em binário equivale a 2 no sistema decimal.</p>
+
 </div>
 </div>
 </div>
@@ -656,14 +629,14 @@ Esta ainda é a primeira linha.</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <table>
 <thead><tr>
-<th style="text-align:left">Forma Correta</th>
-<th style="text-align:right">Forma Incorreta</th>
+<th style="text-align:left">Termo</th>
+<th style="text-align:right">Variação regional</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:left">Biscoito</td>
-<td style="text-align:right">Bolhacha</td>
+<td style="text-align:right">Bolacha</td>
 </tr>
 </tbody>
 </table>
@@ -710,7 +683,7 @@ Esta ainda é a primeira linha.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="img">img<a class="anchor-link" href="#img">&#182;</a></h3>
+<h3 id="Imagens">Imagens<a class="anchor-link" href="#Imagens">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -751,7 +724,7 @@ Esta ainda é a primeira linha.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Gostou de ter aprendido esse recurso fenomenal que é o Markdown? Então compartilhe com seus amigos para que eles possam aprender também! Ajude a tornar a educação gratuita mais plural e democrática.</p>
+<p>Agora que você conhece alguns recursos do Markdown, experimente usá-los para organizar seus documentos e repositórios.</p>
 
 </div>
 </div>
@@ -775,7 +748,7 @@ Esta ainda é a primeira linha.</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><a href = "https://daringfireball.net/projects/markdown/" target = "_blank">Site Oficial do Marckdown</a>;</li>
+<li><a href = "https://daringfireball.net/projects/markdown/" target = "_blank">Site Oficial do Markdown</a>.</li>
 </ul>
 
 </div>
@@ -785,31 +758,27 @@ Esta ainda é a primeira linha.</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><a href = "https://www.youtube.com/watch?v=LntSB-gl-ZI" target = "_blank">Explicação sobre Marckdown pelo professor Gustavo Guanabara</a>;</li>
+<li><a href = "https://www.youtube.com/watch?v=LntSB-gl-ZI" target = "_blank">Explicação sobre Markdown pelo professor Gustavo Guanabara</a>.</li>
 </ul>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Alguma-d&#250;vida?-Entre-em-contato-comigo:">Alguma d&#250;vida? Entre em contato comigo:<a class="anchor-link" href="#Alguma-d&#250;vida?-Entre-em-contato-comigo:">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><a href = "mailto:alysson.barbosa@ee.ufcg.edu.br" target = "_blank"> Me envie um e-mail</a>;</li>
-</ul>
 
-</div>
-</div>
-</div>
     </div>
   </div>
+
+
+  <nav class="lesson-navigation" aria-label="Navegação entre aulas">
+    <a class="lesson-nav-link lesson-nav-previous" href="UsandoBranches.html">
+      <span class="lesson-nav-direction">← Anterior</span>
+      <span class="lesson-nav-title">Trabalhando com branches</span>
+    </a>
+    <a class="lesson-nav-link lesson-nav-next" href="../recursos-complementares.html">
+      <span class="lesson-nav-direction">→ Próximo</span>
+      <span class="lesson-nav-title">Leituras e vídeos</span>
+    </a>
+  </nav>
 
   <footer class = "footeratalho">
 
@@ -817,6 +786,7 @@ Esta ainda é a primeira linha.</p>
 
   </footer>
   
+  <script src="../js/site.js"></script>
 </body>
 
 </html>

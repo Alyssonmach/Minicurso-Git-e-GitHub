@@ -1,22 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR" class="theme-dark">
 <head><meta charset="utf-8" />
 
-<title>Issues e Forks</title>
+<title>Issues e Forks · Minicurso de Git e GitHub</title>
 
 <link rel = "icon" href = "../img/logo2.png" type = "image/x-icon" />
 <link rel = "shortcut icon" href = "../img/logo2.png" type = "image/x-icon" />
 <meta name = "viewport" content = "width=device-width, initial-scale=1.0" />
 <meta name = "author" content = "Alysson Machado">
-<meta name = "description" content = "Aprenda a usar o Software de Versionamento Git e o Repositório GitHub para auxiliar sua vida acadêmica e profissional.">
-<link rel = "stylesheet" type = "text/css" href = "../css/estilomenu.css" />
-<link href = "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel = "stylesheet" />
-
+<meta name = "description" content = "Issues e forks · Minicurso de Git e GitHub.">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <link rel="stylesheet" href="../css/jupyter-style.css">
-<link rel="stylesheet" href="../css/switcher-style.css">
+<link rel="stylesheet" href="../css/site-theme.css">
+<link rel="stylesheet" href="../css/lesson-style.css">
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
@@ -40,65 +38,38 @@
     });
     </script>
     <!-- End of mathjax configuration --></head>
-<body>
+<body class="lesson-page">
 
-  <header class = "headeratalho"> 
-
-    <a href = "../index.html" class = "logo" target = "_self"> Curso de Git e GitHub </a>
-    <div class = "menu-toggle"></div>
-
-    <nav class = "navatalho">
-      
+    <header class="headeratalho">
+    <a href="../index.html" class="logo">Curso de Git e GitHub</a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-navigation"></button>
+    <nav class="navatalho" id="primary-navigation" aria-label="Navegação principal">
       <ul>
-        
-        <li><a href = "http://ecandeia.dee.ufcg.edu.br" target = "_blank"> Site da Disciplina </a></li>
-        <li><a href = "../index.html" target = "_self" class = "active"> Materiais </a></li>
-        <li><a href = "../listadeformulario.html" target = "_self"> Feedback </a></li>
+        <li><a href="../index.html">Materiais</a></li>
+        <li><a href="../recursos-complementares.html">Leituras e vídeos</a></li>
+        <li><a href="http://ecandeia.dee.ufcg.edu.br" target="_blank" rel="noopener noreferrer">Site da Disciplina</a></li>
         <li>
-					
-					<div class="container-switcher">
-
-					<label id="switch" class="switch">
-							<input type="checkbox" onchange="toggleTheme()" id="slider">
-							<span class="slider round"></span>
-					</label>
-					
-					</div>
-					
-			    </li>
-
+          <div class="container-switcher">
+            <label id="switch" class="switch" aria-label="Alternar tema claro ou escuro">
+              <input type="checkbox" onchange="toggleTheme()" id="slider">
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </li>
       </ul>
-
     </nav>
-
-    <div class = "clearfix"></div>
-
+    <div class="clearfix"></div>
   </header>
 
   <script type = "text/javascript" src = "../js/switcher.js"></script>
 
-  <script src="https://code.jquery.com/jquery-3.4.1.js" 
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" 
-  crossorigin="anonymous"></script>
-
-  <script type="text/javascript">
-
-    $(document).ready(function(){
-      $('.menu-toggle').click(function(){
-        $('.menu-toggle').toggleClass('active')
-        $('nav').toggleClass('active')
-      })
-    })
-
-  </script>
-  
-  <div tabindex="-1" id="notebook" class="border-box-sizing">
-    <div class="container" id="notebook-container">
+<div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container lesson-content" id="notebook-container">
 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Mais-Recursos-Dispon&#237;veis-no-GitHub">Mais Recursos Dispon&#237;veis no GitHub<a class="anchor-link" href="#Mais-Recursos-Dispon&#237;veis-no-GitHub">&#182;</a></h1><h4 id="Conhe&#231;a-algumas-ferramentas-dispon&#237;veis-no-GitHub-para-que-voc&#234;-consiga-ser-mais-participativo-em-projetos-Open-Source.">Conhe&#231;a algumas ferramentas dispon&#237;veis no GitHub para que voc&#234; consiga ser mais participativo em projetos Open Source.<a class="anchor-link" href="#Conhe&#231;a-algumas-ferramentas-dispon&#237;veis-no-GitHub-para-que-voc&#234;-consiga-ser-mais-participativo-em-projetos-Open-Source.">&#182;</a></h4>
+<h1 id="Mais-Recursos-Dispon&#237;veis-no-GitHub">Mais Recursos Dispon&#237;veis no GitHub<a class="anchor-link" href="#Mais-Recursos-Dispon&#237;veis-no-GitHub">&#182;</a></h1><h4 id="resumo-da-aula">Conheça recursos que ajudam a discutir problemas e propor mudanças em projetos no GitHub.<a class="anchor-link" href="#resumo-da-aula">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -120,7 +91,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>O <strong>Issue</strong> é uma ferramenta interessante do GitHub para deixar um feedback ou auxiliar na construção de algum projeto desenvolvido por outras pessoas. Trata-se da ideia de deixar comentários em projetos. Com ela, é possível escrever textos, colocar imagens, usar alguns métodos de marcação, colocar links e postar "emojis" para fortificar a sua issue. Com esse recurso, os programadores ativos conseguem aumentar sua networking participando em outros projetos. Não é a toa que o GitHub também é respeitado por ser uma verdadeira rede social profissional.</p>
+<p>Issues são espaços de discussão ligados a um repositório. Elas podem registrar bugs, dúvidas ou propostas de melhoria e permitem que responsáveis e colaboradores acompanhem o assunto.</p>
 
 </div>
 </div>
@@ -128,7 +99,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Há duas possibilidades de se usar uma <strong>issue</strong>: a interação por parte dos donos do projeto e a interação por parte dos colaboradores. Vamos ver abaixo como ocorre os procedimentos nas duas situações.</p>
+<p>Uma issue pode ser aberta por quem mantém o repositório ou por colaboradores, conforme as permissões e as configurações do projeto. A seguir, veremos exemplos de como participar dessas conversas.</p>
 
 </div>
 </div>
@@ -152,7 +123,7 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <blockquote><ol>
-<li>Quando você acessar qualquer repositório do GitHub, será possível visualizar uma aba chamada <strong>Issue</strong>, nela você pode deixar a sua contribuição.</li>
+<li>Em um repositório que aceita contribuições, abra a seção de issues e escolha a opção para criar uma nova issue. A disponibilidade e os nomes dos controles dependem das configurações do projeto.</li>
 <li>Clique em "<strong>New issue</strong>" para fazer o seu comentário.</li>
 </ol>
 </blockquote>
@@ -173,8 +144,8 @@
 <div class="text_cell_render border-box-sizing rendered_html">
 <blockquote><ol>
 <li>Ao clicar em "<strong>New issue</strong>", você pode fazer seu comentário. Coloque um título e relate a sua mensagem com clareza.</li>
-<li>Issues suportam a linguagem de marcação Marckdown, a mesma que é usada para embelezar o documento README.md.</li>
-<li>Clique em "<strong>Submit now issue</strong>" para publicar o seu comentário.</li>
+<li>Issues aceitam Markdown, que também é usado para formatar arquivos como o README.md.</li>
+<li>Clique em "<strong>Submit new issue</strong>" para publicar o seu comentário.</li>
 </ol>
 </blockquote>
 
@@ -193,9 +164,9 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <blockquote><ol>
-<li>A quantidade total de issues abertas no repositório será contabilizada ao lado da opção "<strong>Issue</strong>".</li>
-<li>Quando uma issue é criada, os donos do repositório podem mantê-las abertas ou fechadas, do mesmo modo é possível verificar o status das que já foram finalizadas e as que estão pendentes.</li>
-<li>Quando você clica em uma issue, é possível ver o conteúdo da mensagem. Tanto o usuário quanto os donos do repositório podem comentar ou reagir com emojis a elas. Além disso, o criador da mesma pode editá-las posteriormente.</li>
+<li>A página do repositório lista as issues abertas. Elas podem permanecer abertas enquanto o trabalho estiver em andamento e ser fechadas quando o assunto for resolvido ou encerrado.</li>
+<li>Use os filtros e os rótulos disponíveis para acompanhar issues por status ou assunto.</li>
+<li>Ao abrir uma issue, você pode ler a conversa e, conforme as permissões do repositório, comentar ou reagir. Quem criou a issue também pode editá-la, se ainda tiver acesso.</li>
 </ol>
 </blockquote>
 
@@ -205,14 +176,14 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Reagindo-a-Issues-Enquanto-Titular-do-Reposit&#243;rio">Reagindo a Issues Enquanto Titular do Reposit&#243;rio<a class="anchor-link" href="#Reagindo-a-Issues-Enquanto-Titular-do-Reposit&#243;rio">&#182;</a></h3>
+<h3 id="Administrando-Issues-no-Reposit&#243;rio">Administrando issues no reposit&#243;rio<a class="anchor-link" href="#Administrando-Issues-no-Reposit&#243;rio">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src = "../img/58.png" width = "900" alt = "respondendo um issue"></p>
+<p><img src = "../img/58.png" width = "900" alt = "Respondendo a uma issue"></p>
 
 </div>
 </div>
@@ -221,8 +192,8 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <blockquote><ol>
-<li>Como titular do repositório, você pode comentar a mensagem do usuário.</li>
-<li>Caso a issue tenha cumprido o seu objetivo, você pode fechá-la em "<strong>Close issue</strong>". Desse modo, é possível organizar todas elas que foram deixadas em seu repositório.</li>
+<li>Se você administra o repositório, pode responder à issue e fechá-la quando o assunto estiver resolvido ou não exigir mais acompanhamento.</li>
+<li>Quando o assunto estiver resolvido, feche a issue pelo controle correspondente. Os nomes dos botões podem variar conforme a interface.</li>
 </ol>
 </blockquote>
 
@@ -241,7 +212,7 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <blockquote><ol>
-<li>Você também pode impedir que uma issue possa ser comentada por outros usuário em "<strong>Lock conversation</strong>", marcá-la no topo em "<strong>Pin issue</strong>", transferir para outro repositório em "<strong>Transfer issue</strong>" ou deletar totalmente em "<strong>Delete issue</strong>".</li>
+<li>Dependendo das permissões e das configurações do repositório, quem o administra pode bloquear novas interações, fixar uma issue, transferi-la para outro repositório ou excluí-la.</li>
 </ol>
 </blockquote>
 
@@ -260,7 +231,7 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <blockquote><ol>
-<li>Você também pode criar respostas padrões. Em "<strong>Settings</strong>", você pode ir em "<strong>Saved replies</strong>" para adicionar uma resposta padrão as issues.</li>
+<li>Em algumas interfaces, é possível salvar respostas reutilizáveis nas configurações para responder a questões recorrentes.</li>
 </ol>
 </blockquote>
 
@@ -279,7 +250,7 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <blockquote><ol>
-<li>Dessa forma, você pode respoder as mensagens dos contribuidores em seu projeto de forma mais eficaz.</li>
+<li>Responda às mensagens com clareza e inclua informações que ajudem a pessoa a avançar.</li>
 </ol>
 </blockquote>
 
@@ -289,7 +260,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Com essa ferramenta, você pode ser contribuidor de grandes projetos. O simples fato de relatar erros ou sugerir alterações são de grande ajuda para códigos desenvolvidos em Open Source.</p>
+<p>Relatar um problema com clareza, compartilhar passos para reproduzi-lo ou sugerir uma melhoria pode ajudar a equipe a manter um projeto de código aberto.</p>
 
 </div>
 </div>
@@ -306,7 +277,7 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <blockquote><ol>
-<li>Vejas as issues que um dos repositórios da Google possuem. Provavelmente eles aproveitaram bastante a contribuição de outros usuários para fazer boas implementações e alterações em seu projeto.</li>
+<li>Veja as issues abertas em repositórios públicos para observar como equipes descrevem problemas, discutem soluções e registram decisões.</li>
 </ol>
 </blockquote>
 
@@ -323,7 +294,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Outra forma de você colaborar em algum projeto é criando um "<strong>Fork</strong>". Com essa ferramenta, um usuário pode ter uma cópia de outros repositórios para editá-los da forma que for mais conveniente. Desse modo, programadores podem fazer alterações práticas em outros projetos para mostrar as novidades aos titulares do repositório. Se ele for favorável as mudanças, há como trazê-las ao repositório, ganhando novos recursos no projeto e fazendo com que o programador responsável por essas implementações torne-se um colaborador.</p>
+<p>Um fork cria, na sua conta, uma cópia de um repositório. Você pode trabalhar nessa cópia sem alterar diretamente o projeto original e, quando estiver pronto, propor suas mudanças por meio de um pull request.</p>
 
 </div>
 </div>
@@ -340,7 +311,7 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <blockquote><ol>
-<li>Quando você entra em algum repositório em que você não está vinculado, há uma opção no canto superior direito da tela para criar um "<strong>fork</strong>", clique nela.</li>
+<li>Em um repositório de outra pessoa, use a opção de fork para criar uma cópia na sua conta. As permissões e a interface podem variar.</li>
 </ol>
 </blockquote>
 
@@ -359,7 +330,7 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <blockquote><ol>
-<li>Repare que ao clicar nessa opção, todo o conteúdo do repositório aparece copiado em sua conta, sendo uma versão em que você pode fazer qualquer tipo de edição usando os recursos ensinados anteriormentes. Observe que há duas opções para você clicar: em "<strong>Compare</strong>" você pode ver tudo que foi modificado na nova versão feita por você; já em "<strong>Pull request</strong>", você pode enviar todo o trabalho de modificações do repositório ao seu titular.</li>
+<li>Depois de criar o fork, você pode comparar suas mudanças com o repositório original e abrir um pull request. A equipe responsável poderá revisar a proposta, pedir ajustes e decidir se deseja integrá-la.</li>
 </ol>
 </blockquote>
 
@@ -378,7 +349,7 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <blockquote><ol>
-<li>Clicando em "<strong>Compare</strong>", você pode ver tudo que foi alterado. Dentro dessa opção, há uma aba de nome "<strong>Create pull request</strong>", em que você também pode enviar ao titular do repositório o seu versionamento ao repositório, após todos as alterações terem sido concluidas.</li>
+<li>Compare as mudanças da sua cópia com o repositório original. Quando estiver pronto, abra um pull request e descreva as alterações para que a equipe responsável possa revisá-las.</li>
 </ol>
 </blockquote>
 
@@ -397,7 +368,7 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <blockquote><ol>
-<li>Clicando em "<strong>Create pull request</strong>", você pode enviar todas as alterações que você fez ao titular, de modo que ele possa enxergar os exatos pontos modificados. Além disso, você tem todo um espaço para comentar o que o levou a realizar tais alterações.</li>
+<li>No pull request, explique o que mudou e por quê. A equipe responsável poderá comentar, pedir ajustes e decidir se integra as alterações ao projeto.</li>
 </ol>
 </blockquote>
 
@@ -442,7 +413,7 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <blockquote><ol>
-<li>Na conta do autor, o fork é recebido no formato da imagem acima. Caso ele tenha aceitado todas as alterações feitas pelo colaborador, clicando em "<strong>Merge pull request</strong>" é possível adicionar todas as alterações ao repositório original, tornando assim o usuário responsável por elas um contribuidor do projeto. O Visual Studio Code por exemplo, possui mais de 4,000 contribuidores, dado que todo o seu código fonte é aberto e está disponível no GitHub.</li>
+<li>A equipe responsável pelo repositório pode revisar o pull request e, se aprovar as mudanças, integrá-las ao projeto. A pessoa que propôs as alterações contribui para o projeto, mas isso não a torna automaticamente mantenedora.</li>
 </ol>
 </blockquote>
 
@@ -461,7 +432,7 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <blockquote><ol>
-<li>Observe agora que, quando o titular do repositório aceitou as alterações e clicou em "<strong>Merge pull request</strong>", o repositório oficial do projeto agora possui o conteúdo que foi adicionado.</li>
+<li>Quando um pull request é integrado, as alterações passam a fazer parte do repositório original. O botão e a estratégia de integração podem variar conforme as configurações do projeto.</li>
 </ol>
 </blockquote>
 
@@ -478,7 +449,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Na próxima aula vamos aprender conceitos importantes da linguagem de marcação Markdown. Com ela, você pode formatar tanto sua página web para usar recursos do GitHub Pages, quanto algumas outras ferramentas também compátiveis com o GitHub, já que o Markdown é integrado a ele.</p>
+<p>Na próxima aula, vamos conhecer Markdown, uma sintaxe simples para formatar textos em documentos e em várias áreas do GitHub.</p>
 
 </div>
 </div>
@@ -510,31 +481,27 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><a href = "https://www.youtube.com/watch?v=mUZOySyVcuQ" target = "_blank">Explicação sobre Issues pelo Professor Gustavo Guanabara</a>;</li>
+<li><a href = "https://www.youtube.com/watch?v=mUZOySyVcuQ" target = "_blank">Explicação sobre Issues pelo Professor Gustavo Guanabara</a>.</li>
 </ul>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Alguma-d&#250;vida?-Entre-em-contato-comigo:">Alguma d&#250;vida? Entre em contato comigo:<a class="anchor-link" href="#Alguma-d&#250;vida?-Entre-em-contato-comigo:">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><a href = "mailto:alysson.barbosa@ee.ufcg.edu.br" target = "_blank"> Me envie um e-mail</a>;</li>
-</ul>
 
-</div>
-</div>
-</div>
     </div>
   </div>
+
+
+  <nav class="lesson-navigation" aria-label="Navegação entre aulas">
+    <a class="lesson-nav-link lesson-nav-previous" href="UsandoGitHubPages.html">
+      <span class="lesson-nav-direction">← Anterior</span>
+      <span class="lesson-nav-title">Publicando com GitHub Pages</span>
+    </a>
+    <a class="lesson-nav-link lesson-nav-next" href="UsandoBranches.html">
+      <span class="lesson-nav-direction">→ Próximo</span>
+      <span class="lesson-nav-title">Trabalhando com branches</span>
+    </a>
+  </nav>
 
   <footer class = "footeratalho">
 
@@ -542,6 +509,7 @@
 
   </footer>
   
+  <script src="../js/site.js"></script>
 </body>
 
 </html>

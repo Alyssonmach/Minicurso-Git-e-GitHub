@@ -1,22 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR" class="theme-dark">
 <head><meta charset="utf-8" />
 
-<title>GitHub Pages</title>
+<title>GitHub Pages · Minicurso de Git e GitHub</title>
 
 <link rel = "icon" href = "../img/logo2.png" type = "image/x-icon" />
 <link rel = "shortcut icon" href = "../img/logo2.png" type = "image/x-icon" />
 <meta name = "viewport" content = "width=device-width, initial-scale=1.0" />
 <meta name = "author" content = "Alysson Machado">
-<meta name = "description" content = "Aprenda a usar o Software de Versionamento Git e o Repositório GitHub para auxiliar sua vida acadêmica e profissional.">
-<link rel = "stylesheet" type = "text/css" href = "../css/estilomenu.css" />
-<link href = "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel = "stylesheet" />
-
+<meta name = "description" content = "Publicando com GitHub Pages · Minicurso de Git e GitHub.">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <link rel="stylesheet" href="../css/jupyter-style.css">
-<link rel="stylesheet" href="../css/switcher-style.css">
+<link rel="stylesheet" href="../css/site-theme.css">
+<link rel="stylesheet" href="../css/lesson-style.css">
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
@@ -40,65 +38,38 @@
     });
     </script>
     <!-- End of mathjax configuration --></head>
-<body>
+<body class="lesson-page">
 
-  <header class = "headeratalho"> 
-
-    <a href = "../index.html" class = "logo" target = "_self"> Curso de Git e GitHub </a>
-    <div class = "menu-toggle"></div>
-
-    <nav class = "navatalho">
-      
+    <header class="headeratalho">
+    <a href="../index.html" class="logo">Curso de Git e GitHub</a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-navigation"></button>
+    <nav class="navatalho" id="primary-navigation" aria-label="Navegação principal">
       <ul>
-        
-        <li><a href = "http://ecandeia.dee.ufcg.edu.br" target = "_blank"> Site da Disciplina </a></li>
-        <li><a href = "../index.html" target = "_self" class = "active"> Materiais </a></li>
-        <li><a href = "../listadeformulario.html" target = "_self"> Feedback </a></li>
+        <li><a href="../index.html">Materiais</a></li>
+        <li><a href="../recursos-complementares.html">Leituras e vídeos</a></li>
+        <li><a href="http://ecandeia.dee.ufcg.edu.br" target="_blank" rel="noopener noreferrer">Site da Disciplina</a></li>
         <li>
-					
-					<div class="container-switcher">
-
-					<label id="switch" class="switch">
-							<input type="checkbox" onchange="toggleTheme()" id="slider">
-							<span class="slider round"></span>
-					</label>
-					
-					</div>
-					
-			    </li>
-
+          <div class="container-switcher">
+            <label id="switch" class="switch" aria-label="Alternar tema claro ou escuro">
+              <input type="checkbox" onchange="toggleTheme()" id="slider">
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </li>
       </ul>
-
     </nav>
-
-    <div class = "clearfix"></div>
-
+    <div class="clearfix"></div>
   </header>
 
   <script type = "text/javascript" src = "../js/switcher.js"></script>
 
-  <script src="https://code.jquery.com/jquery-3.4.1.js" 
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" 
-  crossorigin="anonymous"></script>
-
-  <script type="text/javascript">
-
-    $(document).ready(function(){
-      $('.menu-toggle').click(function(){
-        $('.menu-toggle').toggleClass('active')
-        $('nav').toggleClass('active')
-      })
-    })
-
-  </script>
-  
-  <div tabindex="-1" id="notebook" class="border-box-sizing">
-    <div class="container" id="notebook-container">
+<div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container lesson-content" id="notebook-container">
 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Usando-o-GitHub-Pages">Usando o GitHub Pages<a class="anchor-link" href="#Usando-o-GitHub-Pages">&#182;</a></h1><h4 id="Aprenda-como-voc&#234;-pode-usar-o-GitHub-para-hospedar-sua-p&#225;gina-web-online-gratuitamente.">Aprenda como voc&#234; pode usar o GitHub para hospedar sua p&#225;gina web online gratuitamente.<a class="anchor-link" href="#Aprenda-como-voc&#234;-pode-usar-o-GitHub-para-hospedar-sua-p&#225;gina-web-online-gratuitamente.">&#182;</a></h4>
+<h1 id="Usando-o-GitHub-Pages">Usando o GitHub Pages<a class="anchor-link" href="#Usando-o-GitHub-Pages">&#182;</a></h1><h4 id="resumo-da-aula">Aprenda a publicar um site estático usando o GitHub Pages.<a class="anchor-link" href="#resumo-da-aula">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -113,7 +84,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>O GitHub possui um recurso muito interessante chamado <a href = "https://pages.github.com/" target = "_blank">GitHub Pages</a>. Com ele, você pode hospedar o seu site e usar um domínio gratuitamente para fazer a divulgação de seus projetos. Vale a pena lembrar que esse recurso demanda conhecimentos em linguagens que servem para desenvolver sites na web, como o <strong>HTML</strong>, <strong>CSS</strong>, <strong>js</strong> e várias outras linguagens. Saiba também que não é possível usar recursos mais complexos como Banco de Dados usando o mySQL com PHP, pois a ideia de hospedar um site no GitHub é meramente educacional e profissional, não comercial.</p>
+<p>O <a href = "https://pages.github.com/" target = "_blank" rel = "noopener noreferrer">GitHub Pages</a> é um serviço de hospedagem de sites estáticos. Você pode publicar arquivos HTML, CSS e JavaScript ou usar um gerador de sites estáticos. O GitHub Pages não executa código de servidor, como PHP, nem fornece banco de dados; o endereço publicado pode usar o domínio do GitHub ou um domínio próprio configurado por você.</p>
 
 </div>
 </div>
@@ -121,7 +92,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Se você está vendo essa parte do curso sem antes ter olhado para as partes anteriores, provavelmente você sentirá mais dificuldades em implementar o que será dito abaixo. Recomendo fortemente que você veja as aulas anteriores acessando:</p>
+<p>Antes de começar, revise as aulas sobre Git, GitHub, instalação das ferramentas e criação de repositórios. Isso facilitará o acompanhamento dos próximos passos.</p>
 
 </div>
 </div>
@@ -163,7 +134,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Vamos agora ver os passos que você deve seguir para hospedar sua página Web usando o GitHub. Perceba que esse site na qual você está acessando foi criado usando os passos apresentados abaixo.</p>
+<p>A seguir, vamos publicar um site estático usando o GitHub Pages. As configurações e os nomes dos botões podem mudar conforme a interface do GitHub.</p>
 
 </div>
 </div>
@@ -172,7 +143,7 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ol>
-<li>Crie um repositório com um nome obedecendo a seguinte sintaxe: <strong>username.github.io</strong>, sendo que o <strong>username</strong> deve ser exatamento o nome do <strong>usuário cadastrado</strong> na sua conta do GitHub.</li>
+<li>Para criar um site pessoal de usuário ou organização, o repositório segue o formato usuario.github.io, substituindo “usuario” pelo nome da conta. Sites de projeto podem ser publicados a partir de outros repositórios.</li>
 </ol>
 
 </div>
@@ -189,7 +160,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>Atente-se para não errar nada na hora de nomear o seu repositório.</p>
+<blockquote><p>Confira o nome do repositório antes de criá-lo. Para um site pessoal, ele deve seguir o formato usuario.github.io.</p>
 </blockquote>
 
 </div>
@@ -199,7 +170,7 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ol>
-<li>Ainda nas configurações, vá para o fim da página até encontrar a seção que fala sobre "<strong>GitHub Pages</strong>". Atente-se para que esse recurso esteja habilitado. Caso você não queira programar o seu site desde o início, você pode criar um bom documento <strong>README.md</strong> usando o <strong>Markdown</strong> (futuramente irei ensinar sobre isso) e escolher um template oferecido pelo própio GitHub em "<strong>Choose a theme</strong>".</li>
+<li>Configure o GitHub Pages na área de configurações do repositório. Se usar um gerador de sites, siga as instruções correspondentes à ferramenta escolhida; os nomes e a localização das opções podem mudar.</li>
 </ol>
 
 </div>
@@ -216,7 +187,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>Certifique-se que os recursos na seção "GitHub Pages" estejam habilitados para que tudo funcione corretamente.</p>
+<blockquote><p>Confira se a origem de publicação está configurada corretamente e se os arquivos do site estão nessa origem.</p>
 </blockquote>
 
 </div>
@@ -226,7 +197,7 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ol>
-<li>Entretanto, se você sabe criar página web, é possívell hospedar todos os arquivos da página no repositório, assim você ganhará um domínio gratuito para promover os seus projetos (lembrando que o documento <strong>../index.html</strong> é o arquivo padrão que ele abrirá como a home da sua página).</li>
+<li>Se você já tem uma página, envie ao repositório os arquivos estáticos, como HTML, CSS, JavaScript e imagens, e configure a origem de publicação do GitHub Pages. O endereço publicado depende de ser um site pessoal ou de projeto.</li>
 </ol>
 
 </div>
@@ -243,7 +214,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>Saber programar para web é um diferencial na criação de página usando o GitHub Pages.</p>
+<blockquote><p>Conhecer HTML, CSS e JavaScript ajuda a personalizar um site, mas você também pode usar um gerador de sites estáticos.</p>
 </blockquote>
 
 </div>
@@ -253,7 +224,7 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ol>
-<li>Após ter criado um bom documento README.md e escolhido um template para a sua página, ou então programar a sua página totalmente usando HTML, CSS E js, você pode fazer um commit no seu repositório e sua página estará pronta para ser acessada.</li>
+<li>Depois de preparar os arquivos do site, publique-os a partir da origem configurada ou use um fluxo de build compatível. O GitHub Pages hospeda conteúdo estático; ele não executa aplicações de servidor nem fornece banco de dados.</li>
 </ol>
 
 </div>
@@ -270,7 +241,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>Coloque todos os arquivos da sua página no GitHub. Ele funciona como um servidor para hospedar o seu síte com um domínio gratuito.</p>
+<blockquote><p>Envie os arquivos do site ao repositório configurado para publicação. O GitHub Pages os disponibilizará em um endereço web; também é possível configurar um domínio próprio.</p>
 </blockquote>
 
 </div>
@@ -280,7 +251,7 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ol>
-<li>Agora é só você digitar o domínio do site, que é exatamente o mesmo que se encontra nomeando o seu repositório e acessá-lo pelo seu navegador padrão.</li>
+<li>Depois que a publicação terminar, abra o endereço indicado nas configurações do GitHub Pages. O formato do endereço varia entre sites pessoais e sites de projeto.</li>
 </ol>
 
 </div>
@@ -304,7 +275,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Caso você queira ter inúmeros sites hospedados no GitHub usando apenas uma única conta, saiba que é possível. Nas configurações do repositório em que você está usando, há uma sessão ao final exclusiva para habilitar o GitHub Pages. Observe as imagens abaixo para saber o que deve ser feito.</p>
+<p>É possível publicar mais de um site na mesma conta: por exemplo, um site pessoal e sites associados a projetos. Cada site deve ter sua própria origem de publicação e endereço.</p>
 
 </div>
 </div>
@@ -320,7 +291,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>Vá nas configurações do seu repositório em GitHub Pages. Nela, você pode definir que a "branch master" do seu repositório (a padrão) seja o local que você hospede os arquivos do site.</p>
+<blockquote><p>Nas configurações do repositório, escolha a origem de publicação disponível para o site. Ela pode ser uma branch e uma pasta específicas ou um fluxo de trabalho de build, conforme a configuração do projeto.</p>
 </blockquote>
 
 </div>
@@ -337,7 +308,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>Se você optou por criar um site a partir do README.md, saiba que há templates prontos para uso ofertados pelo GitHub.</p>
+<blockquote><p>Se usar um tema ou gerador, siga a documentação da ferramenta para preparar e publicar o site. O README do repositório documenta o projeto, mas não é publicado automaticamente como um site pelo GitHub Pages.</p>
 </blockquote>
 
 </div>
@@ -353,7 +324,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Na próxima parte do curso vamos aprender a usar mais recursos do GitHub, de forma que você possa ser contribuidor em projetos de terceiros ou apenas sugerir alterações aos mesmos.</p>
+<p>Na próxima aula, vamos conhecer outras formas de participar de projetos no GitHub, como abrir issues e propor mudanças.</p>
 
 </div>
 </div>
@@ -385,7 +356,18 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><a href = "https://www.youtube.com/watch?v=2Y0HXnYpn9E" target = "_blank">Explicação do Professor Gustavo Guanabara sobre GitHub Pages</a>;</li>
+<li><a href = "https://www.youtube.com/watch?v=2Y0HXnYpn9E" target = "_blank">Explicação do Professor Gustavo Guanabara sobre GitHub Pages</a>.</li>
+</ul>
+
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><a href = "https://www.ev.org.br/curso/informatica/desenvolvimento-web/html-basico?return=/cursos/informatica/desenvolvimento-web&cst=351" target = "_blank">HTML - Básico (Fundação Bradesco)</a>.</li>
 </ul>
 
 </div>
@@ -395,7 +377,7 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><a href = "https://www.ev.org.br/curso/informatica/desenvolvimento-web/fundamentos-do-design-grafico?return=/cursos/informatica/desenvolvimento-web&cst=535" target = "_blank">Fundamentos do Design Gráficos (Fundação Bradesco)</a>;</li>
+<li><a href = "https://www.ev.org.br/curso/informatica/desenvolvimento-web/html-avancado?return=/cursos/informatica/desenvolvimento-web&cst=352" target = "_blank">HTML - Avançado (Fundação Bradesco)</a>.</li>
 </ul>
 
 </div>
@@ -405,7 +387,7 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><a href = "https://www.ev.org.br/curso/informatica/desenvolvimento-web/html-basico?return=/cursos/informatica/desenvolvimento-web&cst=351" target = "_blank">HTML - Básico (Fundação Bradesco)</a>;</li>
+<li><a href = "https://www.ev.org.br/curso/informatica/desenvolvimento-web/html-e-css-na-pratica?return=/cursos/informatica/desenvolvimento-web&cst=534" target = "_blank">HTML e CSS na Prática (Fundação Bradesco)</a>.</li>
 </ul>
 
 </div>
@@ -415,7 +397,7 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><a href = "https://www.ev.org.br/curso/informatica/desenvolvimento-web/html-avancado?return=/cursos/informatica/desenvolvimento-web&cst=352" target = "_blank">HTML - Avançado (Fundação Bradesco)</a>;</li>
+<li><a href = "https://www.ev.org.br/curso/informatica/desenvolvimento-web/inovando-com-css?return=/cursos/informatica/desenvolvimento-web&cst=296" target = "_blank">Inovando com o CSS (Fundação Bradesco)</a>.</li>
 </ul>
 
 </div>
@@ -425,51 +407,27 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><a href = "https://www.ev.org.br/curso/informatica/desenvolvimento-web/html-e-css-na-pratica?return=/cursos/informatica/desenvolvimento-web&cst=534" target = "_blank">HTML e CSS na Prática (Fundação Bradesco)</a>;</li>
+<li><a href = "https://www.ev.org.br/curso/informatica/desenvolvimento-web/introducao-ao-javascript?return=/cursos/informatica/desenvolvimento-web&cst=536" target = "_blank">Introdução ao js (Fundação Bradesco)</a>.</li>
 </ul>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><a href = "https://www.ev.org.br/curso/informatica/desenvolvimento-web/inovando-com-css?return=/cursos/informatica/desenvolvimento-web&cst=296" target = "_blank">Inovando com o CSS (Fundação Bradesco)</a>;</li>
-</ul>
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><a href = "https://www.ev.org.br/curso/informatica/desenvolvimento-web/introducao-ao-javascript?return=/cursos/informatica/desenvolvimento-web&cst=536" target = "_blank">Introdução ao js (Fundação Bradesco)</a>;</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Alguma-d&#250;vida?-Entre-em-contato-comigo:">Alguma d&#250;vida? Entre em contato comigo:<a class="anchor-link" href="#Alguma-d&#250;vida?-Entre-em-contato-comigo:">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><a href = "mailto:alysson.barbosa@ee.ufcg.edu.br" target = "_blank"> Me envie um e-mail</a>;</li>
-</ul>
-
-</div>
-</div>
-</div>
     </div>
   </div>
+
+
+  <nav class="lesson-navigation" aria-label="Navegação entre aulas">
+    <a class="lesson-nav-link lesson-nav-previous" href="RepositorioGitHub.html">
+      <span class="lesson-nav-direction">← Anterior</span>
+      <span class="lesson-nav-title">Criando um repositório</span>
+    </a>
+    <a class="lesson-nav-link lesson-nav-next" href="IssueFork.html">
+      <span class="lesson-nav-direction">→ Próximo</span>
+      <span class="lesson-nav-title">Issues e forks</span>
+    </a>
+  </nav>
 
   <footer class = "footeratalho">
 
@@ -477,6 +435,7 @@
 
   </footer>
   
+  <script src="../js/site.js"></script>
 </body>
 
 </html>

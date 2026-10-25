@@ -1,23 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR" class="theme-dark">
 <head><meta charset="utf-8" />
 
-<title>GitHub</title>
+<title>GitHub · Minicurso de Git e GitHub</title>
 
 <link rel = "icon" href = "../img/logo2.png" type = "image/x-icon" />
 <link rel = "shortcut icon" href = "../img/logo2.png" type = "image/x-icon" />
 <meta name = "viewport" content = "width=device-width, initial-scale=1.0" />
 <meta name = "author" content = "Alysson Machado">
-<meta name = "description" content = "Aprenda a usar o Software de Versionamento Git e o Repositório GitHub para auxiliar sua vida acadêmica e profissional.">
-<link rel = "stylesheet" type = "text/css" href = "../css/estilomenu.css" />
-<link href = "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel = "stylesheet" />
-
+<meta name = "description" content = "Aprendendo sobre o GitHub · Minicurso de Git e GitHub.">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
 <link rel="stylesheet" href="../css/jupyter-style.css">
-<link rel="stylesheet" href="../css/switcher-style.css">
+<link rel="stylesheet" href="../css/site-theme.css">
+<link rel="stylesheet" href="../css/lesson-style.css">
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
@@ -41,65 +39,38 @@
     });
     </script>
     <!-- End of mathjax configuration --></head>
-<body>
+<body class="lesson-page">
 
-  <header class = "headeratalho"> 
-
-    <a href = "../index.html" class = "logo" target = "_self"> Curso de Git e GitHub </a>
-    <div class = "menu-toggle"></div>
-
-    <nav class = "navatalho">
-      
+    <header class="headeratalho">
+    <a href="../index.html" class="logo">Curso de Git e GitHub</a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-navigation"></button>
+    <nav class="navatalho" id="primary-navigation" aria-label="Navegação principal">
       <ul>
-        
-        <li><a href = "http://ecandeia.dee.ufcg.edu.br" target = "_blank"> Site da Disciplina </a></li>
-        <li><a href = "../index.html" target = "_self" class = "active"> Materiais </a></li>
-        <li><a href = "../listadeformulario.html" target = "_self"> Feedback </a></li>
+        <li><a href="../index.html">Materiais</a></li>
+        <li><a href="../recursos-complementares.html">Leituras e vídeos</a></li>
+        <li><a href="http://ecandeia.dee.ufcg.edu.br" target="_blank" rel="noopener noreferrer">Site da Disciplina</a></li>
         <li>
-					
-					<div class="container-switcher">
-
-					<label id="switch" class="switch">
-							<input type="checkbox" onchange="toggleTheme()" id="slider">
-							<span class="slider round"></span>
-					</label>
-					
-					</div>
-					
-			    </li>
-
+          <div class="container-switcher">
+            <label id="switch" class="switch" aria-label="Alternar tema claro ou escuro">
+              <input type="checkbox" onchange="toggleTheme()" id="slider">
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </li>
       </ul>
-
     </nav>
-
-    <div class = "clearfix"></div>
-
+    <div class="clearfix"></div>
   </header>
 
   <script type = "text/javascript" src = "../js/switcher.js"></script>
 
-  <script src="https://code.jquery.com/jquery-3.4.1.js" 
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" 
-  crossorigin="anonymous"></script>
-
-  <script type="text/javascript">
-
-    $(document).ready(function(){
-      $('.menu-toggle').click(function(){
-        $('.menu-toggle').toggleClass('active')
-        $('nav').toggleClass('active')
-      })
-    })
-
-  </script>
-  
-  <div tabindex="-1" id="notebook" class="border-box-sizing">
-    <div class="container" id="notebook-container">
+<div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container lesson-content" id="notebook-container">
 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Aprendendo-e-Criando-no-GitHub">Aprendendo e Criando no GitHub<a class="anchor-link" href="#Aprendendo-e-Criando-no-GitHub">&#182;</a></h1><h4 id="Nessa-parte-do-curso,-vamos-falar-sobre-a-plataforma-GitHub,-uma-das-maiores-comunidades-Open-Source-do-mundo.-Vamos-tamb&#233;m-criar-o-nosso-perfil-e-um-reposit&#243;rio-na-plataforma.">Nessa parte do curso, vamos falar sobre a plataforma GitHub, uma das maiores comunidades Open Source do mundo. Vamos tamb&#233;m criar o nosso perfil e um reposit&#243;rio na plataforma.<a class="anchor-link" href="#Nessa-parte-do-curso,-vamos-falar-sobre-a-plataforma-GitHub,-uma-das-maiores-comunidades-Open-Source-do-mundo.-Vamos-tamb&#233;m-criar-o-nosso-perfil-e-um-reposit&#243;rio-na-plataforma.">&#182;</a></h4>
+<h1 id="Aprendendo-e-Criando-no-GitHub">Aprendendo e Criando no GitHub<a class="anchor-link" href="#Aprendendo-e-Criando-no-GitHub">&#182;</a></h1><h4 id="resumo-da-aula">Nesta aula, vamos conhecer o GitHub, uma plataforma para hospedar projetos que usam Git, e criar uma conta e um repositório.<a class="anchor-link" href="#resumo-da-aula">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -121,7 +92,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>O <strong>GitHub</strong> é um dos maiores e mais famosos repositórios remotos que existem mundialmente, sendo ele uma plataforma que hospeda códigos fonte com auxílio do software de versionamento <strong>Git</strong>. Se você ainda não viu nossa parte do curso que fala sobre o Git, acesse o link abaixo, nele há itens importantes para você estudar e conseguir avançar bem no curso.</p>
+<p>GitHub é uma plataforma online de hospedagem e colaboração em projetos que usam Git. Ela oferece repositórios remotos e ferramentas para compartilhar código, acompanhar mudanças e trabalhar em equipe. Se você ainda não estudou Git, acesse a aula anterior antes de continuar.</p>
 
 </div>
 </div>
@@ -130,7 +101,7 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><a href = "AprendendoSobreoGit.html" target = "_blank">Veja nossa parte do curso que fala sobre o Git</a>;</li>
+<li><a href = "AprendendoSobreoGit.html" target = "_blank">Veja nossa parte do curso que fala sobre o Git</a>.</li>
 </ul>
 
 </div>
@@ -139,7 +110,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>O GitHub poderia ser somente uma espécie de <strong>Google Drive</strong> ou um <strong>Dropbox</strong>, em que poderiamos armazenar nossos projetos e arquivos. Entretanto, os desenvolvedores da plataforma foram mais criativos: o GitHub pode ser considerado uma <strong>plataforma social</strong> para programadores. Como trata-se de uma comunidade <strong>Open Source</strong>, podemos ter contato com outros programadores com o objetivo de aumentar o nosso <strong>Networking</strong>, um fator fundamental em uma carreira profissional.</p>
+<p>O GitHub também permite armazenar e compartilhar arquivos, mas sua principal função é apoiar projetos versionados com Git. Além de hospedar repositórios, oferece recursos de colaboração, como issues e pull requests. Participar desses projetos pode ajudar a aprender com outras pessoas e a construir uma rede de contatos profissionais.</p>
 
 </div>
 </div>
@@ -147,7 +118,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p><strong>Open Source</strong>: Código aberto é um modelo de desenvolvimento criado em 1998, que promove o licenciamento livre para o design ou esquematização de um produto, e a redistribuição universal desses, com a possibilidade de livre consulta, examinação ou modificação do produto, sem a necessidade de pagar uma licença comercial, promovendo um modelo colaborativo de produção intelectual.</p>
+<blockquote><p>Código aberto (open source) descreve software cujo código é disponibilizado sob uma licença que concede direitos de uso, estudo, modificação e redistribuição, de acordo com seus termos. Isso permite que diferentes pessoas estudem e colaborem no projeto.</p>
 </blockquote>
 
 </div>
@@ -156,7 +127,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p><strong>Networking</strong>: é uma palavra em inglês que indica a capacidade de estabelecer uma rede de contatos ou uma conexão com algo ou com alguém.. Essa rede de contatos é um sistema de suporte onde existe a partilha de serviços e informações entre indivíduos ou grupos que têm um interesse em comum.</p>
+<blockquote><p>Networking é a construção e a manutenção de uma rede de contatos, que pode facilitar a troca de experiências, informações e oportunidades.</p>
 </blockquote>
 
 </div>
@@ -165,7 +136,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>O GitHub é uma plataforma muito utilizada no mundo inteiro por profissionais e entusiastas do ramo da tecnologia, com ela, podemos divulgar inúmeros projetos, ganhar contribuição de outros profissionais, ser um participante ativo em tornar o conhecimento mais acessível para as pessoas e dar continuidade a projetos de terceiros, com a devida licença. Nele, é contabilizado mais de <strong>36 milhões de usuários ativos</strong> no mundo.</p>
+<p>O GitHub reúne profissionais, estudantes e entusiastas que publicam projetos, colaboram em repositórios e compartilham conhecimento. A quantidade de usuários muda com o tempo, por isso não incluímos um número que possa ficar desatualizado.</p>
 
 </div>
 </div>
@@ -189,7 +160,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Podemos também usar um recursos muito interessante para hospedar o nosso site gratuitamente chamado de <strong>GitHub Pages</strong>, usando <strong>HTML</strong>, <strong>CSS</strong> e <strong>js</strong>. Entretanto, não podemos criar páginas muito complexas que envolvam ferramentas de banco de dados, estamos falando de páginas simples com fins educativos.</p>
+<p>O GitHub Pages permite publicar sites estáticos a partir de um repositório. É possível usar HTML, CSS e JavaScript ou um gerador de sites estáticos. O serviço não executa código de servidor, como PHP, nem oferece banco de dados.</p>
 
 </div>
 </div>
@@ -214,12 +185,11 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <blockquote><ol>
-<li>Criação de repositórios públicos ilimitados.</li>
-<li>Hospedagem de códigos fonte;</li>
-<li>Em sua maioria é gratuito, exceto para projetos gigantescos de grandes corporações;</li>
-<li>Possui características de uma rede social.</li>
-<li>Possui GitHub Pages integrado (você está acessando uma página criada com esse recurso, por exemplo);</li>
-<li>Possibilidade de colaboração e de aumentar sua networking com outros profissionais;</li>
+<li>Repositórios para organizar código, documentação e arquivos do projeto.</li>
+<li>Histórico de mudanças e branches para acompanhar o desenvolvimento.</li>
+<li>Ferramentas de colaboração, como issues, pull requests e revisões.</li>
+<li>GitHub Pages para publicar sites estáticos a partir de um repositório.</li>
+<li>Integrações e automações, de acordo com os recursos disponíveis e as configurações do projeto.</li>
 </ol>
 </blockquote>
 
@@ -229,7 +199,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Por mais que o GitHub seja a principal plataforma com essas características, também podemos citar outras bastante interessantes, em que você pode armazenar remotamente os seus arquivos:</p>
+<p>O GitHub é uma das plataformas de hospedagem e colaboração baseadas em Git. Há outras opções, como GitLab, Bitbucket e Gitea, cada uma com recursos e formas de hospedagem próprios.</p>
 
 </div>
 </div>
@@ -290,7 +260,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>Entre na página <a href="https://github.com">https://github.com</a> e cria a sua conta gratuitamente. Será necessário verificar o seu e-mail para validá-la e preencher um formulário sobre suas preferências.</p>
+<blockquote><p>Entre na página <a href="https://github.com">https://github.com</a> e crie sua conta gratuitamente. Será necessário verificar o seu e-mail para validá-la e preencher um formulário sobre suas preferências.</p>
 </blockquote>
 
 </div>
@@ -307,7 +277,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>Escolha a opção <strong>Free</strong>. Você não terá nenhuma restrição no uso. A versão paga é feita mais para empresas com grandes equipes de desenvolvedores que necessitam de recursos mais complexos.</p>
+<blockquote><p>O GitHub oferece diferentes planos, com recursos e limites próprios. Consulte as informações atuais antes de escolher. Para acompanhar as atividades deste minicurso, uma conta pessoal é suficiente.</p>
 </blockquote>
 
 </div>
@@ -324,7 +294,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>Edite o seu perfil. A escolha de uma boa foto, seguida de informações claras, ajudam a torná-lo mais profissional. Além disso, na aba do perfil você também pode visualizar todos os seus repositórios criados e analisar também um pequeno infográfico dos dias contribuidos por você ao longo do tempo.</p>
+<blockquote><p>Complete o perfil com as informações que deseja compartilhar. Uma foto e uma breve apresentação ajudam outras pessoas a reconhecer seus projetos e a entender seus interesses.</p>
 </blockquote>
 
 </div>
@@ -341,7 +311,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>Na aba de configurações do perfil, você tem acesso a mais configurações detalhadas.</p>
+<blockquote><p>Nas configurações do perfil, você pode atualizar as informações que deseja compartilhar. A interface e os nomes das opções podem mudar com o tempo.</p>
 </blockquote>
 
 </div>
@@ -358,7 +328,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>Na aba "<strong>your repositories</strong>", você pode estar clicando em "<strong>new</strong>" parar criar o seu própio repositório. Além disso, é necessário que você preencha corretamente os campos de configuração.</p>
+<blockquote><p>Na página do seu perfil, procure a opção para criar um repositório. Dê um nome, escolha as opções disponíveis e confira as informações antes de confirmar.</p>
 </blockquote>
 
 </div>
@@ -375,7 +345,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>Mais adiante, vamos utilizar o <strong>Git</strong> para publicar conteúdos ao repositório. Entretanto, você pode relizar todo o processo manualmente (esse que não é o mais adequado).</p>
+<blockquote><p>Mais adiante, usaremos o Git para publicar conteúdo em um repositório. Também é possível criar e editar arquivos pela interface web do GitHub, embora o fluxo deste curso use o GitHub Desktop.</p>
 </blockquote>
 
 </div>
@@ -392,7 +362,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>Na aba "<strong>settings</strong>", você pode realizar uma configuração mais detallhada ao seu repositório.</p>
+<blockquote><p>Nas configurações do repositório, você pode ajustar opções de acesso, colaboração e outros recursos. Os nomes e a organização dessas opções podem mudar conforme a interface.</p>
 </blockquote>
 
 </div>
@@ -409,7 +379,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>Ainda em "<strong>Settings</strong>", escolhendo "<strong>Manage acess</strong>", você pode adicionar as pessoas que irão fazer parte do projeto com você.</p>
+<blockquote><p>Nas configurações de acesso do repositório, você pode convidar colaboradores, desde que tenha as permissões necessárias. Os nomes das opções podem mudar conforme a interface.</p>
 </blockquote>
 
 </div>
@@ -433,7 +403,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Mais adiante, vamos estudar no curso, em detalhes, a criação de repositórios e também aprender a fazer as devidas instalações de alguns softwares para dinamizar o seu uso no GitHub.</p>
+<p>Nas próximas aulas, vamos criar repositórios e preparar as ferramentas para trabalhar com eles.</p>
 
 </div>
 </div>
@@ -461,11 +431,14 @@
 </div>
 </div>
 </div>
+
+
+
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><a href = "https://www.ev.org.br/curso/administracao/gestao-de-projetos/introducao-a-gestao-de-projetos?return=/cursos/administracao&cst=482" target = "_blank"> Introdução a Gestão de Projetos (Escola Virtual - Bradesco)</a>;</li>
+<li><a href = "https://www.youtube.com/watch?v=hcZ0qtwvN1w&t=1968s" target = "_blank">Explicação sobre o GitHub pelo Professor Gustavo Guanabara</a>.</li>
 </ul>
 
 </div>
@@ -475,61 +448,27 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><a href = "https://www.ev.org.br/curso/administracao/fundamentos-da-administracao/empreendedorismo-e-inovacao?return=/cursos/administracao&cst=490" target = "_blank"> Empreendedorismo e Inovação (Escola Virtual - Bradesco)</a>;</li>
+<li><a href = "https://www.youtube.com/watch?v=CJtrNuTTs4Q&t=2281s" target = "_blank"> Explicação sobre a Evolução do Git e GitHub pelo Professor Gustavo Guanabara</a>.</li>
 </ul>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><a href = "https://www.ev.org.br/curso/desenvolvimento-pessoal-e-profissional/aprendendo-na-web?return=/cursos/desenvolvimento-pessoal-e-profissional&cst=394" target = "_blank"> Aprendendo na Web (Escola Virtual - Bradesco)</a>;</li>
-</ul>
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><a href = "https://www.youtube.com/watch?v=hcZ0qtwvN1w&t=1968s" target = "_blank">Explicação sobre o GitHub pelo Professor Gustavo Guanabara</a>;</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><a href = "https://www.youtube.com/watch?v=CJtrNuTTs4Q&t=2281s" target = "_blank"> Explicação sobre a Evolução do Git e GitHub pelo Professor Gustavo Guanabara</a>;</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Alguma-d&#250;vida?-Entre-em-contato-comigo:">Alguma d&#250;vida? Entre em contato comigo:<a class="anchor-link" href="#Alguma-d&#250;vida?-Entre-em-contato-comigo:">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><a href = "mailto:alysson.barbosa@ee.ufcg.edu.br" target = "_blank"> Me envie um e-mail</a>;</li>
-</ul>
-
-</div>
-</div>
-</div>
     </div>
   </div>
+
+
+  <nav class="lesson-navigation" aria-label="Navegação entre aulas">
+    <a class="lesson-nav-link lesson-nav-previous" href="AprendendoSobreoGit.html">
+      <span class="lesson-nav-direction">← Anterior</span>
+      <span class="lesson-nav-title">Fundamentos do Git</span>
+    </a>
+    <a class="lesson-nav-link lesson-nav-next" href="InstalacoesGitHub.html">
+      <span class="lesson-nav-direction">→ Próximo</span>
+      <span class="lesson-nav-title">Preparando o ambiente de trabalho</span>
+    </a>
+  </nav>
 
   <footer class = "footeratalho">
 
@@ -537,6 +476,7 @@
 
   </footer>
   
+  <script src="../js/site.js"></script>
 </body>
 
 </html>

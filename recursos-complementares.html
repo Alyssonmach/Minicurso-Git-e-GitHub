@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="theme-dark">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="author" content="Alysson Machado" />
+	<meta name="description" content="Livro e vídeos para aprofundar o estudo de Git." />
+	<title>Leituras e vídeos · Minicurso de Git e GitHub</title>
+	<link rel="icon" href="img/logo2.png" type="image/x-icon" />
+	<link rel="stylesheet" href="css/site-theme.css" />
+	<link rel="stylesheet" href="css/estilomateriais.css" />
+</head>
+<body class="resource-page">
+	<header class="headeratalho">
+		<a href="index.html" class="logo">Curso de Git e GitHub</a>
+		<button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-navigation"></button>
+		<nav class="navatalho" id="primary-navigation" aria-label="Navegação principal">
+			<ul>
+				<li><a href="http://ecandeia.dee.ufcg.edu.br" target="_blank" rel="noopener noreferrer">Site da Disciplina</a></li>
+				<li><a href="index.html">Materiais</a></li>
+				<li><a href="recursos-complementares.html" class="active" aria-current="page">Leituras e vídeos</a></li>
+				<li>
+					<div class="container-switcher">
+						<label id="switch" class="switch" aria-label="Alternar tema claro ou escuro">
+							<input type="checkbox" onchange="toggleTheme()" id="slider" />
+							<span class="slider round"></span>
+						</label>
+					</div>
+				</li>
+			</ul>
+		</nav>
+		<div class="clearfix"></div>
+	</header>
+
+	<main id="conteudo">
+		<section class="catalog-heading" aria-labelledby="page-title">
+			<p class="eyebrow">Material complementar</p>
+			<h1 id="page-title">Leituras e vídeos</h1>
+			<p>Continue estudando Git com o livro Pro Git e a coleção de vídeos indicada pelo próprio projeto.</p>
+		</section>
+
+		<section class="container resource-container" aria-label="Recursos complementares">
+			<article class="box">
+				<div class="icon">09</div>
+				<div class="content">
+					<h3>Livro Pro Git</h3>
+					<p>Livro de Scott Chacon e Ben Straub, publicado pela Apress. A versão online cobre os fundamentos e os recursos avançados do Git.</p>
+					<img src="img/logo3.png" alt="" aria-hidden="true" width="100" />
+					<a class="aatalho" href="https://git-scm.com/book/en/v2" target="_blank" rel="noopener noreferrer">Acesse</a>
+				</div>
+			</article>
+
+			<article class="box">
+				<div class="icon">10</div>
+				<div class="content">
+					<h3>Vídeos sobre Git</h3>
+					<p>Assista aos vídeos reunidos no site oficial do Git para revisar conceitos e acompanhar demonstrações.</p>
+					<img src="img/logo3.png" alt="" aria-hidden="true" width="100" />
+					<a class="aatalho" href="https://git-scm.com/videos" target="_blank" rel="noopener noreferrer">Acesse</a>
+				</div>
+			</article>
+		</section>
+
+	</main>
+
+	<footer class="footeratalho">
+		<p>Criado por: <a href="mailto:alysson.barbosa@ee.ufcg.edu.br">Alysson Machado</a></p>
+	</footer>
+
+	<script src="js/switcher.js"></script>
+	<script src="js/site.js"></script>
+</body>
+</html>

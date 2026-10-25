@@ -1,22 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR" class="theme-dark">
 <head><meta charset="utf-8" />
 
-<title>Instalando Recursos</title>
+<title>Instalando Recursos · Minicurso de Git e GitHub</title>
 
 <link rel = "icon" href = "../img/logo2.png" type = "image/x-icon" />
 <link rel = "shortcut icon" href = "../img/logo2.png" type = "image/x-icon" />
 <meta name = "viewport" content = "width=device-width, initial-scale=1.0" />
 <meta name = "author" content = "Alysson Machado">
-<meta name = "description" content = "Aprenda a usar o Software de Versionamento Git e o Repositório GitHub para auxiliar sua vida acadêmica e profissional.">
-<link rel = "stylesheet" type = "text/css" href = "../css/estilomenu.css" />
-<link href = "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel = "stylesheet" />
-
+<meta name = "description" content = "Preparando o ambiente de trabalho · Minicurso de Git e GitHub.">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <link rel="stylesheet" href="../css/jupyter-style.css">
-<link rel="stylesheet" href="../css/switcher-style.css">
+<link rel="stylesheet" href="../css/site-theme.css">
+<link rel="stylesheet" href="../css/lesson-style.css">
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
@@ -40,65 +38,38 @@
     });
     </script>
     <!-- End of mathjax configuration --></head>
-<body>
+<body class="lesson-page">
 
-  <header class = "headeratalho"> 
-
-    <a href = "../index.html" class = "logo" target = "_self"> Curso de Git e GitHub </a>
-    <div class = "menu-toggle"></div>
-
-    <nav class = "navatalho">
-      
+    <header class="headeratalho">
+    <a href="../index.html" class="logo">Curso de Git e GitHub</a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-navigation"></button>
+    <nav class="navatalho" id="primary-navigation" aria-label="Navegação principal">
       <ul>
-        
-        <li><a href = "http://ecandeia.dee.ufcg.edu.br" target = "_blank"> Site da Disciplina </a></li>
-        <li><a href = "../index.html" target = "_self" class = "active"> Materiais </a></li>
-        <li><a href = "../listadeformulario.html" target = "_self"> Feedback </a></li>
+        <li><a href="../index.html">Materiais</a></li>
+        <li><a href="../recursos-complementares.html">Leituras e vídeos</a></li>
+        <li><a href="http://ecandeia.dee.ufcg.edu.br" target="_blank" rel="noopener noreferrer">Site da Disciplina</a></li>
         <li>
-					
-					<div class="container-switcher">
-
-					<label id="switch" class="switch">
-							<input type="checkbox" onchange="toggleTheme()" id="slider">
-							<span class="slider round"></span>
-					</label>
-					
-					</div>
-					
-			    </li>
-
+          <div class="container-switcher">
+            <label id="switch" class="switch" aria-label="Alternar tema claro ou escuro">
+              <input type="checkbox" onchange="toggleTheme()" id="slider">
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </li>
       </ul>
-
     </nav>
-
-    <div class = "clearfix"></div>
-
+    <div class="clearfix"></div>
   </header>
 
   <script type = "text/javascript" src = "../js/switcher.js"></script>
 
-  <script src="https://code.jquery.com/jquery-3.4.1.js" 
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" 
-  crossorigin="anonymous"></script>
-
-  <script type="text/javascript">
-
-    $(document).ready(function(){
-      $('.menu-toggle').click(function(){
-        $('.menu-toggle').toggleClass('active')
-        $('nav').toggleClass('active')
-      })
-    })
-
-  </script>
-  
-  <div tabindex="-1" id="notebook" class="border-box-sizing">
-    <div class="container" id="notebook-container">
+<div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container lesson-content" id="notebook-container">
 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Preparando-o-Ambiente-de-Trabalho">Preparando o Ambiente de Trabalho<a class="anchor-link" href="#Preparando-o-Ambiente-de-Trabalho">&#182;</a></h1><h4 id="Vamos-ver-algumas-instala&#231;&#245;es-importantes-para-come&#231;armos-a-usar-os-recursos-do-GitHub-de-forma-produtiva.">Vamos ver algumas instala&#231;&#245;es importantes para come&#231;armos a usar os recursos do GitHub de forma produtiva.<a class="anchor-link" href="#Vamos-ver-algumas-instala&#231;&#245;es-importantes-para-come&#231;armos-a-usar-os-recursos-do-GitHub-de-forma-produtiva.">&#182;</a></h4>
+<h1 id="Preparando-o-Ambiente-de-Trabalho">Preparando o Ambiente de Trabalho<a class="anchor-link" href="#Preparando-o-Ambiente-de-Trabalho">&#182;</a></h1><h4 id="resumo-da-aula">Vamos preparar as ferramentas necessárias para acompanhar as atividades do minicurso.<a class="anchor-link" href="#resumo-da-aula">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -113,14 +84,14 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Instalando-Softwares">Instalando Softwares<a class="anchor-link" href="#Instalando-Softwares">&#182;</a></h3>
+<h3 id="Instalando-Programas">Instalando programas<a class="anchor-link" href="#Instalando-Programas">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Nas aulas anteriores, aprendemos sobre o que é o Git e o GitHub. Com esses conhecimentos estabelecidos, vamos dar um importante passo para começarmos a trabalhar com essas ferramentas incríveis.</p>
+<p>Nas aulas anteriores, vimos o que são Git e GitHub. Agora vamos preparar as ferramentas que usaremos nas próximas atividades.</p>
 
 </div>
 </div>
@@ -128,7 +99,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Nesta parte do curso, vamos apenas instalar todo o material necessário para se trabalhar com o GitHub, então veja os softwares necessários para começar bem na plataforma GitHub:</p>
+<p>Nesta aula, vamos instalar os programas necessários para acompanhar as atividades. Você precisará de um navegador, um editor de código, do Git e do GitHub Desktop.</p>
 
 </div>
 </div>
@@ -137,7 +108,7 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ol>
-<li>Bons navegadores como o <strong>Google Chrome</strong>, <strong>Microsoft Edge</strong> ou <strong>Safari</strong>.</li>
+<li>Use um navegador atualizado, como Google Chrome, Microsoft Edge, Firefox ou Safari.</li>
 </ol>
 
 </div>
@@ -167,7 +138,7 @@
 <td style="text-align:center"><a href = "https://www.microsoft.com/pt-br/edge/?standalone=1" target = "_blank"> Microsoft Edge </a></td>
 </tr>
 <tr>
-<td style="text-align:center"><a href = "https://www.apple.com/br/safari/" targer = "_blank"> Safari (Disponível só para MACos) </a></td>
+<td style="text-align:center"><a href = "https://www.apple.com/br/safari/" targer = "_blank"> Safari (Disponível só para macOS) </a></td>
 </tr>
 </tbody>
 </table>
@@ -179,7 +150,7 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ol>
-<li>Bons Editores de Código como o <strong>Visual Studio Code</strong> ou <strong>Sublime Text</strong>.</li>
+<li>Para editar arquivos, você pode usar um editor de código, como Visual Studio Code ou Sublime Text.</li>
 </ol>
 
 </div>
@@ -221,7 +192,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>Dentro do Visual Studio Code, você pode instalar extensões que poderam ajudar-lhe em seu projeto. Nele, há inúmeras linguagens de programação disponíveis. Fique a vontade para começar a usar as que serão convenientes para você.</p>
+<blockquote><p>O Visual Studio Code oferece extensões para várias linguagens e ferramentas. Instale apenas as extensões de que precisar para as atividades.</p>
 </blockquote>
 
 </div>
@@ -238,7 +209,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>Nas extensões, adicione a linguagem portuguesa para ser padrão do aplicativo, isso pode facilitar o seu uso.</p>
+<blockquote><p>Se preferir usar a interface em português, instale o pacote de idioma correspondente e selecione-o nas configurações do editor.</p>
 </blockquote>
 
 </div>
@@ -255,7 +226,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>Habilite a possibilidade de salvar automaticamente, assim o seu trabalho corre menos risco de ser perdido.</p>
+<blockquote><p>Você pode ativar o salvamento automático nas configurações do editor para reduzir o risco de perder alterações não salvas.</p>
 </blockquote>
 
 </div>
@@ -272,7 +243,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>A opção <strong>"Word Wrap"</strong> ligada permite que, caso a linha de código esteja muito extensa, ela não ultrapasse a largura da tela do computador, mas sim quebre de linha. Com isso, poderemos depurar com mais facilidade os nosso códigos.</p>
+<blockquote><p>A opção Word Wrap quebra visualmente linhas longas para que caibam na janela do editor. Ela não altera o conteúdo do arquivo e pode facilitar a leitura.</p>
 </blockquote>
 
 </div>
@@ -281,7 +252,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Outra opção interessante é o <strong>Sublime Text</strong>, você pode instalar esse editor de código <a href = "https://www.sublimetext.com/" target = "_blank">clicando aqui</a>. Com ele, é possível utilizar os mesmos recursos que o Visual Studio Code oferece, porém com mais dificuldades, pois o Visual Studio Code, por também ser da Microsoft (assim como o GitHub), possui mais compatibilidades.</p>
+<p>O <strong>Sublime Text</strong> é outra opção para editar código. <a href = "https://www.sublimetext.com/" target = "_blank" rel = "noopener noreferrer">Acesse o site oficial para baixá-lo</a>. O Visual Studio Code e o Sublime Text têm recursos e extensões diferentes; escolha o editor que preferir.</p>
 
 </div>
 </div>
@@ -297,7 +268,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>O Sublime Text é uma ótima opção caso você queira substituir o Visual Studio Code (inclusive esse site que você está usando nesse exato momento foi feito utilizando essa IDE).</p>
+<blockquote><p>Este site também foi editado com o Sublime Text. Você pode usar esse editor ou qualquer outro que atenda às atividades do curso.</p>
 </blockquote>
 
 </div>
@@ -307,7 +278,7 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ol>
-<li>Por fim, mas não menos importante, devemos instalar o <strong>Git Source Code Management</strong> e o <strong>GitHub Desktop</strong>.</li>
+<li>Instale também o Git e o GitHub Desktop. O Git controla as versões dos arquivos; o GitHub Desktop oferece uma interface gráfica para algumas operações comuns.</li>
 </ol>
 
 </div>
@@ -345,7 +316,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>Nesse site, você pode instalar o Git. É importante que você sempre opte por instalar aplicativos em sites oficiais, com isso você garantirá sua segurança e dos computadores conectados na mesma rede que a sua.</p>
+<blockquote><p>Baixe o Git no site oficial. Sempre confira a origem dos instaladores antes de executá-los.</p>
 </blockquote>
 
 </div>
@@ -362,7 +333,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>Em algum momento da instalação do Git, você deve selecionar o editor de código que você vai utilizar, foi dado o exemplo de uso para o Visual Studio Code e o Sublime Text. Após concluir esse passo, avance com as configurações sugeridas pelo instalador do Git.</p>
+<blockquote><p>Durante a instalação do Git, você poderá escolher um editor padrão e revisar outras opções. Se não tiver certeza, mantenha as configurações recomendadas pelo instalador.</p>
 </blockquote>
 
 </div>
@@ -412,7 +383,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Na próxima aula, vamos começar a utilizar os nossos softwares acima para trabalhar em nossos repositórios. Espero que até o momento você tenha entendido tudo e, em caso de dúvidas, clique no link abaixo para me enviar um e-mail.</p>
+<p>Na próxima aula, vamos usar essas ferramentas para criar e trabalhar com repositórios.</p>
 
 </div>
 </div>
@@ -436,29 +407,13 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><a href = "https://www.youtube.com/watch?v=gMh6lrXibWY" target = "_blank"> Explicação sobre as instalações pelo professor Gustavo Guanabara</a>;</li>
+<li><a href = "https://www.youtube.com/watch?v=gMh6lrXibWY" target = "_blank"> Explicação sobre as instalações pelo professor Gustavo Guanabara</a>.</li>
 </ul>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Alguma-d&#250;vida?-Entre-em-contato-comigo:">Alguma d&#250;vida? Entre em contato comigo:<a class="anchor-link" href="#Alguma-d&#250;vida?-Entre-em-contato-comigo:">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><a href = "mailto:alysson.barbosa@ee.ufcg.edu.br" target = "_blank"> Me envie um e-mail</a>;</li>
-</ul>
 
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -467,17 +422,21 @@
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>Visite mais artes em <a href = "https://octodex.github.com/" target = "_blank">GitHub OctoDex</a>.</p>
-</blockquote>
 
-</div>
-</div>
-</div>
     </div>
   </div>
+
+
+  <nav class="lesson-navigation" aria-label="Navegação entre aulas">
+    <a class="lesson-nav-link lesson-nav-previous" href="AprendendoGitHub.html">
+      <span class="lesson-nav-direction">← Anterior</span>
+      <span class="lesson-nav-title">Aprendendo sobre o GitHub</span>
+    </a>
+    <a class="lesson-nav-link lesson-nav-next" href="RepositorioGitHub.html">
+      <span class="lesson-nav-direction">→ Próximo</span>
+      <span class="lesson-nav-title">Criando um repositório</span>
+    </a>
+  </nav>
 
   <footer class = "footeratalho">
 
@@ -485,6 +444,7 @@
 
   </footer>
   
+  <script src="../js/site.js"></script>
 </body>
 
 </html>

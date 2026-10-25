@@ -1,22 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR" class="theme-dark">
 <head><meta charset="utf-8" />
 
-<title>Branches</title>
+<title>Branches · Minicurso de Git e GitHub</title>
 
 <link rel = "icon" href = "../img/logo2.png" type = "image/x-icon" />
 <link rel = "shortcut icon" href = "../img/logo2.png" type = "image/x-icon" />
 <meta name = "viewport" content = "width=device-width, initial-scale=1.0" />
 <meta name = "author" content = "Alysson Machado">
-<meta name = "description" content = "Aprenda a usar o Software de Versionamento Git e o Repositório GitHub para auxiliar sua vida acadêmica e profissional.">
-<link rel = "stylesheet" type = "text/css" href = "../css/estilomenu.css" />
-<link href = "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel = "stylesheet" />
-
+<meta name = "description" content = "Trabalhando com branches · Minicurso de Git e GitHub.">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <link rel="stylesheet" href="../css/jupyter-style.css">
-<link rel="stylesheet" href="../css/switcher-style.css">
+<link rel="stylesheet" href="../css/site-theme.css">
+<link rel="stylesheet" href="../css/lesson-style.css">
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
@@ -40,66 +38,38 @@
     });
     </script>
     <!-- End of mathjax configuration --></head>
-<body>
+<body class="lesson-page">
 
-  <header class = "headeratalho"> 
-
-    <a href = "../index.html" class = "logo" target = "_self"> Curso de Git e GitHub </a>
-    <div class = "menu-toggle"></div>
-
-    <nav class = "navatalho">
-      
+    <header class="headeratalho">
+    <a href="../index.html" class="logo">Curso de Git e GitHub</a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-navigation"></button>
+    <nav class="navatalho" id="primary-navigation" aria-label="Navegação principal">
       <ul>
-        
-        <li><a href = "http://ecandeia.dee.ufcg.edu.br" target = "_blank"> Site da Disciplina </a></li>
-        <li><a href = "../index.html" target = "_self" class = "active"> Materiais </a></li>
-        <li><a href = "../listadeformulario.html" target = "_self"> Feedback </a></li>
+        <li><a href="../index.html">Materiais</a></li>
+        <li><a href="../recursos-complementares.html">Leituras e vídeos</a></li>
+        <li><a href="http://ecandeia.dee.ufcg.edu.br" target="_blank" rel="noopener noreferrer">Site da Disciplina</a></li>
         <li>
-					
-					<div class="container-switcher">
-
-					<label id="switch" class="switch">
-							<input type="checkbox" onchange="toggleTheme()" id="slider">
-							<span class="slider round"></span>
-					</label>
-					
-					</div>
-					
-			    </li>
-
+          <div class="container-switcher">
+            <label id="switch" class="switch" aria-label="Alternar tema claro ou escuro">
+              <input type="checkbox" onchange="toggleTheme()" id="slider">
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </li>
       </ul>
-
     </nav>
-
-    <div class = "clearfix"></div>
-
+    <div class="clearfix"></div>
   </header>
 
   <script type = "text/javascript" src = "../js/switcher.js"></script>
 
-  <script src="https://code.jquery.com/jquery-3.4.1.js" 
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" 
-  crossorigin="anonymous"></script>
-
-  <script type="text/javascript">
-
-    $(document).ready(function(){
-      $('.menu-toggle').click(function(){
-        $('.menu-toggle').toggleClass('active')
-        $('nav').toggleClass('active')
-      })
-    })
-
-  </script>
-
-  
-  <div tabindex="-1" id="notebook" class="border-box-sizing">
-    <div class="container" id="notebook-container">
+<div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container lesson-content" id="notebook-container">
 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Usando-as-Branches">Usando as Branches<a class="anchor-link" href="#Usando-as-Branches">&#182;</a></h1><h4 id="Com-as-branches-ou-ramifica&#231;&#245;es,-voc&#234;-pode-criar-dentro-de-um-mesmo-reposit&#243;rio-outros-paralelos-a-ele.-Dessa-forma,-&#233;-poss&#237;vel-garantir-mais-organiza&#231;&#227;o-e-seguran&#231;a-a-sua-branch-padr&#227;o-(&quot;default&quot;),-tamb&#233;m-chamado-de-&quot;branch-master&quot;.">Com as branches ou ramifica&#231;&#245;es, voc&#234; pode criar dentro de um mesmo reposit&#243;rio outros paralelos a ele. Dessa forma, &#233; poss&#237;vel garantir mais organiza&#231;&#227;o e seguran&#231;a a sua branch padr&#227;o ("default"), tamb&#233;m chamado de "branch master".<a class="anchor-link" href="#Com-as-branches-ou-ramifica&#231;&#245;es,-voc&#234;-pode-criar-dentro-de-um-mesmo-reposit&#243;rio-outros-paralelos-a-ele.-Dessa-forma,-&#233;-poss&#237;vel-garantir-mais-organiza&#231;&#227;o-e-seguran&#231;a-a-sua-branch-padr&#227;o-(&quot;default&quot;),-tamb&#233;m-chamado-de-&quot;branch-master&quot;.">&#182;</a></h4>
+<h1 id="Usando-as-Branches">Usando as Branches<a class="anchor-link" href="#Usando-as-Branches">&#182;</a></h1><h4 id="resumo-da-aula">Aprenda a criar branches para desenvolver e revisar mudanças separadamente dentro de um repositório.<a class="anchor-link" href="#resumo-da-aula">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -121,7 +91,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Nesse arquivo, vamos aprender um incrível recurso do GitHub chamado "<strong>branch</strong>". Com ele podemos criar ramificações dentro do nosso repositório. Fazendo uma analogia, é como se houvesse mundos paralelos, em que cada um deles seria uma versão diferente de um mesmo projeto. Essa diferença pode ser entendida como implementações de testes dentro do projeto, uma forma de mostrar novas implementações aos colaboradores sem necessariamente adicionar ao branch padrão (também conhecida com "<strong>branch master</strong>") e manter salva versões antigas do projeto, de forma a garantir a segurança do código caso ocorra algum problema nas últimas versões criadas do repositório.</p>
+<p>Uma branch é uma linha de desenvolvimento dentro de um repositório. Ela permite trabalhar em mudanças separadas e integrá-las à branch escolhida quando estiverem prontas. A branch padrão pode se chamar main, master ou ter outro nome definido pelo projeto.</p>
 
 </div>
 </div>
@@ -137,7 +107,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>Observando esses grafos, é possível perceber que com a criação de branches, podemos assegurar a segurança dos arquivos na branch master, de modo que caso seja feita alterações que possam prejudicar a branch master, por inúmeros motivos, essas implementações danosas podem ser removidas ou alteradas sem afetar diretamente os arquivos que estavam estáveis.</p>
+<blockquote><p>Branches permitem desenvolver e testar mudanças sem alterar imediatamente a branch principal. Se uma mudança não for aprovada, ela pode ser ajustada ou descartada sem afetar a branch principal.</p>
 </blockquote>
 
 </div>
@@ -153,7 +123,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Veja os passos abaixo para que você comece a trabalhar com criação de branches em seu repositório.</p>
+<p>A seguir, veremos como criar uma branch e trabalhar nela pelo GitHub Desktop.</p>
 
 </div>
 </div>
@@ -161,7 +131,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src = "../img/73.png" width = "900" alt = "Branch master do repositório"></p>
+<p><img src = "../img/73.png" width = "900" alt = "Branch principal do repositório"></p>
 
 </div>
 </div>
@@ -169,7 +139,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>Quando um repositório é criado, por padrão, há apenas a branch master disponível. Nela, devemos considerar que todo o seu conteúdo é de relevância e está estavél. Desse modo, toda vez que houver implementações novas que ainda serão modificadas ou testadas, convém criar uma nova branch para esses arquivos. Só depois que não houver mais nenhuma alteração a se fazer neles, levar os arquivos a branch master. Assim será feito para todas as novas implementações, sendo uma boa prática de versionar arquivos.</p>
+<blockquote><p>Um repositório começa com uma branch padrão, cujo nome depende da configuração do serviço ou do projeto. Use-a para o trabalho considerado principal e crie outras branches para desenvolver mudanças separadamente; depois, revise e integre as alterações quando estiverem prontas.</p>
 </blockquote>
 
 </div>
@@ -186,7 +156,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>No GitHub Desktop, quando houver uma nova versão do seu projeto, ou mesmo implementações discretas, você pode fazer o "commit" dos arquivos em uma nova branch obedecendo os seguintes passos da imagem abaixo.</p>
+<blockquote><p>No GitHub Desktop, selecione a branch em que deseja trabalhar ou crie uma nova para separar as próximas mudanças.</p>
 </blockquote>
 
 </div>
@@ -203,7 +173,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>Escolha se você quer colocar as alterações na branch master ou na branch que será criada para colocar uma outra versão do projeto. No exemplo abaixo, vamos esoclhar comitar na nova branch chamada "versão-1-5-(beta)".</p>
+<blockquote><p>Antes de criar um commit, confira qual branch está selecionada. Neste exemplo, as mudanças serão registradas em uma nova branch chamada "versão-1-5-(beta)".</p>
 </blockquote>
 
 </div>
@@ -220,7 +190,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>Desse modo, observe que todas as alterações feitas serão colocadas na branch criada para a nova versão do projeto.</p>
+<blockquote><p>As alterações feitas enquanto uma branch está selecionada são registradas nela. Antes de publicá-la, revise os commits e confirme que a branch escolhida é a correta.</p>
 </blockquote>
 
 </div>
@@ -237,7 +207,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>Quando tudo estiver pronto, clique em "<strong>publish branch</strong>" para enviar a branch criada com o seus devidos arquivos ao repositório remoto GitHub.</p>
+<blockquote><p>Quando quiser compartilhar a branch, use a opção para publicá-la no repositório remoto.</p>
 </blockquote>
 
 </div>
@@ -254,7 +224,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>É possível criar uma branch dentro de outra branch, por esse motivo que também podemos chamá-la de ramificação.</p>
+<blockquote><p>Uma branch pode ser criada a partir de outra. Nesse caso, ela começa a partir do commit selecionado, mas as duas branches podem seguir caminhos diferentes depois disso.</p>
 </blockquote>
 
 </div>
@@ -271,7 +241,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>Observe no repositório remoto GitHub que todas as branches criadas estão lá. Cada uma delas vai adquirir o conteúdo da anterior com o adicional das novas alterações feitas.</p>
+<blockquote><p>Depois da publicação, você poderá ver a branch no repositório remoto. Ela não recebe automaticamente mudanças feitas nas outras branches; as linhas de desenvolvimento só são combinadas quando você as integra.</p>
 </blockquote>
 
 </div>
@@ -280,7 +250,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Observe o esquema abaixo. Ele nos mostra as ramificações que foram criadas nos exemplos acima. A partir da "Branch Master" foi criada uma ramificação para "Branch versão-1-5-(beta)" e dessa para Branch versão-1-5-(final), cada uma dela recebendo o conteúdo adicional mais o conteúdo novo implementado.</p>
+<p>O esquema mostra um exemplo de branches: uma branch de trabalho é criada a partir da principal; outra pode partir dela. As mudanças só passam de uma branch para outra quando são integradas.</p>
 
 </div>
 </div>
@@ -289,12 +259,7 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><strong>Esquema das branches</strong>:<br>
-1.0 - Branch Master  <blockquote>
-<pre><code>1.1 - Branch versão-1-5-(beta) + Conteúdos da Branch Master
-      1.1.1 - Branch versão-1-5-(final) + Conteúdos da Branch versão-1-5-(beta)</code></pre>
-</blockquote>
-</li>
+<li><strong>Exemplo de fluxo</strong>: uma branch beta parte da branch principal e, se necessário, uma branch final pode partir da beta. Cada uma pode ter commits próprios; as mudanças passam de uma para outra quando são integradas.</li>
 </ul>
 
 </div>
@@ -303,14 +268,14 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Enviando-todas-as-Branches-para-a-Master">Enviando todas as Branches para a Master<a class="anchor-link" href="#Enviando-todas-as-Branches-para-a-Master">&#182;</a></h3>
+<h3 id="Integrando-Branches">Integrando branches<a class="anchor-link" href="#Integrando-Branches">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Após você ter segurança sobre tudo que foi feito, você pode enviar os arquivos das branches feitas para a master e, assim, todas as suas alterações no projeto estarão realmente implementadas a ele com êxito.</p>
+<p>Quando as mudanças estiverem revisadas e prontas, integre a branch de trabalho à branch de destino usando merge. Escolha a branch que receberá as mudanças e confira o resultado antes de publicar.</p>
 
 </div>
 </div>
@@ -318,7 +283,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>O objetivo agora é enviar os arquivos adicionais da "Branch versão-1-5-(final)" para a "Branch versão-1-5-(beta)" e desse enviar para a "Branch Master". Caso seja de interesse ofuscar os arquivos da versão beta, poderemos também enviar os arquivos da versão final diretamente para a master.</p>
+<p>Neste exemplo, vamos integrar as mudanças da branch final à branch beta e, depois, as mudanças aprovadas à branch principal. Um projeto também pode integrar a branch final diretamente à principal; o fluxo depende da equipe.</p>
 
 </div>
 </div>
@@ -334,7 +299,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>No GitHub Desktop, na área de branch do repositório em questão, há uma opção chamada "<strong>Choose a branch to merge into...</strong>", esteja como a branch receptora e clique nessa opção para depositar os arquivos nela.</p>
+<blockquote><p>No GitHub Desktop, selecione a branch que receberá as mudanças e use a opção de merge. Depois, escolha a branch que contém as alterações a integrar.</p>
 </blockquote>
 
 </div>
@@ -351,7 +316,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>Após ter feito os passos acima, escolha a branch que você deseja enviar para outro. Nesse caso, vamos enviar "versão-1-5-(final)" para "versão-1-5-(beta)" e dar um "push" no repositório remoto GitHub.</p>
+<blockquote><p>Neste exemplo, vamos integrar a branch final à beta e, depois, integrar as mudanças aprovadas à branch principal. Confira o resultado e resolva eventuais conflitos antes de publicar.</p>
 </blockquote>
 
 </div>
@@ -360,7 +325,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Da mesma forma foi feito para enviar a branch "versão-1-5-(beta)" para a "master".</p>
+<p>Repita o processo para integrar a branch beta à branch principal, se esse for o fluxo escolhido para o projeto.</p>
 
 </div>
 </div>
@@ -368,7 +333,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src = "../img/84.png" width = "900" alt = "Mandando as branches para a master"></p>
+<p><img src = "../img/84.png" width = "900" alt = "Integrando branches no repositório"></p>
 
 </div>
 </div>
@@ -376,7 +341,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>Observe agora que o nosso repositório GitHub na branch padrão está com todos os arquivos anteriores.</p>
+<blockquote><p>Depois da integração, confira o histórico e os arquivos da branch principal para confirmar que as mudanças esperadas estão presentes.</p>
 </blockquote>
 
 </div>
@@ -393,7 +358,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>Como as branches que não são padrão já nos serviram e todos os conteúdos delas estão na branch master, podemos deletá-las. Indo na opção "branch" e em "<strong>delete</strong>", quando você está dentro de uma branch no GitHub Desktop, você pode excluí-la. Marque a opções que aparece para excluir do repositório remoto.</p>
+<blockquote><p>Depois que uma branch já foi integrada e não é mais necessária, você pode excluí-la. Mantenha as branches que ainda estiverem em uso ou que precisem ser preservadas.</p>
 </blockquote>
 
 </div>
@@ -410,7 +375,7 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>Assim você pode observar em seu repositório que as branches excluídas não estão mais lá.</p>
+<blockquote><p>Depois de excluir uma branch, confira a lista de branches para confirmar que ela não aparece mais.</p>
 </blockquote>
 
 </div>
@@ -450,31 +415,27 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><a href = "https://www.youtube.com/watch?v=xAOBQtSVI_k" target = "_blank">Explicação sobre Branches do Professor Gustavo Guanabara</a>;</li>
+<li><a href = "https://www.youtube.com/watch?v=xAOBQtSVI_k" target = "_blank">Explicação sobre Branches do Professor Gustavo Guanabara</a>.</li>
 </ul>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Alguma-d&#250;vida?-Entre-em-Contato-Comigo:">Alguma d&#250;vida? Entre em Contato Comigo:<a class="anchor-link" href="#Alguma-d&#250;vida?-Entre-em-Contato-Comigo:">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li><a href = "mailto:alysson.barbosa@ee.ufcg.edu.br" target = "_blank">Me Envie um E-mail</a>;</li>
-</ul>
 
-</div>
-</div>
-</div>
     </div>
   </div>
+
+
+  <nav class="lesson-navigation" aria-label="Navegação entre aulas">
+    <a class="lesson-nav-link lesson-nav-previous" href="IssueFork.html">
+      <span class="lesson-nav-direction">← Anterior</span>
+      <span class="lesson-nav-title">Issues e forks</span>
+    </a>
+    <a class="lesson-nav-link lesson-nav-next" href="CriandoEmMarkdown.html">
+      <span class="lesson-nav-direction">→ Próximo</span>
+      <span class="lesson-nav-title">Escrevendo em Markdown</span>
+    </a>
+  </nav>
 
   <footer class = "footeratalho">
 
@@ -482,6 +443,7 @@
 
   </footer>
   
+  <script src="../js/site.js"></script>
 </body>
 
 </html>
